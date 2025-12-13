@@ -70,7 +70,7 @@ JKRExpHeap::create (size_t size, JKRHeap* parent, bool err)
 void
 JKRExpHeap::destroy ()
 {
-    unk64 _;
+    u64 _;
 #pragma unused(_)
 
     if (mIsRoot == false)
@@ -206,7 +206,8 @@ JKRExpHeap::allocFromHead (size_t size, int align)
     if (foundBlk != Nil)
     {
         CMemBlock* newFreeBlock;
-        CMemBlock* newUsedBlock;
+        CMemBlock* newUsedBlock = NULL;
+
 
         if (foundOff >= sizeof (CMemBlock))
         {
@@ -1161,7 +1162,7 @@ JKRExpHeap::CMemBlock::allocBack (unsigned long size,
     {
         newBlock = reinterpret_cast<CMemBlock*> (mSize + reinterpret_cast<u8*> (this) - size);
         newBlock->mGroupID  = allocGroupID;
-        newBlock->mFlags    = p5 | 0x80;
+        newBlock->mFlags = (u8)(p5 | 0x80);
         newBlock->mSize     = size;
         mGroupID            = groupID;
         mFlags              = p3;

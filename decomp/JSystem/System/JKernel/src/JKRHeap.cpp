@@ -126,11 +126,10 @@ JKRHeap::free (void* obj, JKRHeap* heap)
     heap->free (obj);
 }
 
-void
-JKRHeap::freeAll (void)
+void JKRHeap::freeAll(void)
 {
-    unk64 _;
-#pragma unused(_)
+    u64 _;
+    #pragma unused(_)
 
     JSUListIterator<JKRDisposer> iter;
     while (iter = mDisposerList.getFirst(), iter != mDisposerList.getEnd())
@@ -138,6 +137,7 @@ JKRHeap::freeAll (void)
         iter.getObject()->~JKRDisposer();
     }
 }
+
 
 JKRHeap*
 JKRHeap::findFromRoot (void* obj)
@@ -221,14 +221,11 @@ JKRHeap::dispose (void* begin, void* end)
     dispose_subroutine ((u32)begin, (u32)end);
 }
 
-void
-JKRHeap::dispose ()
+void JKRHeap::dispose()
 {
-    unk64 _;
-#pragma unused(_)
-
     JSUListIterator<JKRDisposer> iterator;
-    while (iterator = mDisposerList.getFirst(), iterator != mDisposerList.getEnd())
+    while (iterator = mDisposerList.getFirst(),
+        iterator != mDisposerList.getEnd())
     {
         iterator->~JKRDisposer();
     }

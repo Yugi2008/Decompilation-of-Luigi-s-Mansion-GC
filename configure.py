@@ -477,6 +477,23 @@ def GameMain(file: str, matching: bool, conf: Dict[str, str]={"":""}) -> Dict[st
         **conf
     }
 
+def GameProject(file: str, matching: bool, conf: Dict[str, str]={"":""}) -> Dict[str, Any]:
+    objects = []
+    filepath = f"Project/{file}"  # <-- must match the split/unit name prefix exactly
+    objects.append(Object(matching, filepath))
+
+    __cflags = cflags_game + [f"-i {decomp_root}/Project"]
+
+    return {
+        "lib": "yasiki",
+        "cflags": __cflags,
+        "progress_category": "game",
+        "src_dir": f"{decomp_root}",
+        "objects": objects,
+        **conf
+    }
+
+
 Matching = True                   # Object matches and should be linked
 NonMatching = False               # Object does not match and should not be linked
 Equivalent = config.non_matching  # Object should be linked when configured with --non-matching
@@ -494,6 +511,7 @@ config.libs = [
     # Game source folders
 
     GameMain("main.cpp", NonMatching),
+    GameProject("auto_03_80194428_text.c", NonMatching),
 #    GameSource("PSystem", [
 #        (NonMatching, "initthread.cpp"),
 #        (NonMatching, "memory.cpp"),
