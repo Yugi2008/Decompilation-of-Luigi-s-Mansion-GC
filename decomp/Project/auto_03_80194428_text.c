@@ -14,6 +14,7 @@ void Channel_SetMixerLevel(f32 farg0) {
 
 void DSPInit(void) {}
 
+
 // DSPInit2 @ 0x8019BA40 size 0x98
 // DSPReleaseHalt @ 0x8019BB80 size 0x48
 // DSPSendCommands @ 0x8019BAE0 size 0x88
@@ -26,15 +27,53 @@ void DSPWaitFinish(void) {
     } while ((u32) (DSPReadMailFromDSP() + 0x77780000) == 0x1357U);
 }
 
+
 // DiplSec @ 0x8019BD60 size 0x3C
 // DoneCallback @ 0x8019C480 size 0x1E0
-// DsetMixerLevel @ 0x8019BC80 size 0x24
-// DsetupTable @ 0x8019BC20 size 0x48
+void DsetMixerLevel(f32 farg0) {
+    lbl_804A0490 = (s16) (lbl_804A5DE8 * farg0);
+}
+
+
+void DsetupTable(u16 arg0, s32 arg1, s32 arg2, s32 arg3, s32 arg4){
+    volatile s32 sp2C;
+    volatile s32 sp28;
+    volatile s32 sp24;
+    volatile s32 sp20;
+    volatile s32 sp1C;
+
+    sp1C = (s32)((u32)arg0 | 0x81000000u);
+    sp20 = arg1;
+    sp24 = arg2;
+    sp28 = arg3;
+    sp2C = arg4;
+
+    DSPSendCommands((s32*)&sp1C, 5);
+    DSPWaitFinish();
+}
+
 // DspBoot @ 0x8019B720 size 0x74
 // DsyncFrame @ 0x8019BCC0 size 0x48
 // DummyLen @ 0x8019C120 size 0x8C
-// DwaitFrame @ 0x8019BD20 size 0x34
-// GetInitVal @ 0x8019C0C0 size 0x44
+
+void DwaitFrame(void) {
+    s32 sp8;
+
+    sp8 = (s32)0x80000000;
+    DSPSendCommands(&sp8, 1);
+    DSPWaitFinish();
+}
+
+u32 GetInitVal(void){
+    register u32 var_r31;
+    srand(OSGetTick());
+
+    var_r31 = 0x7FEC8000u;
+    var_r31 |= rand();
+
+    var_r31 &= 0xFFFFF000u;
+    return var_r31;
+}
 // ReadArrayUnlock @ 0x8019BF40 size 0x17C
 // __CARDUnlock @ 0x8019C1C0 size 0x2B0
 // __DSPCheckMXICBoot2 @ 0x8019B7A0 size 0x280
@@ -136,7 +175,13 @@ s32 fn_80194CB8(void* arg0){
 }
 
 // fn_80194D3C @ 0x80194D3C size 0xA8
-// fn_80194DE4 @ 0x80194DE4 size 0x4C
+
+s32 fn_80194DE4(Arg0Like* arg0, s32 arg1){
+    s32 unused1;
+    fn_80194CB8(arg0);
+    return arg1 & fn_8018D9A8(*arg0->unk34, arg0->unk3C);
+}
+
 // fn_80194E30 @ 0x80194E30 size 0xA8
 void fn_80194ED8(Arg1* arg0){
     *arg0->unk30 = 0;
@@ -149,11 +194,64 @@ void fn_80194EEC(Arg4* arg0, s32 arg1){
     arg0->unk10 = arg1;
 }
 
-// fn_80194F2C @ 0x80194F2C size 0x40
-// fn_80194F6C @ 0x80194F6C size 0x88
+void fn_80194F2C(Arg0_94F2C* arg0, s32 arg1){
+
+    if (*(Arg0_94F2C**)&arg0 != (void*)0) {
+        fn_8018C9EC(
+            *(*(Arg0_94F2C**)&arg0)->unk34,
+                    (void**)&arg0,
+                    arg1
+        );
+    }
+}
+
+
+// special thanks to tgsm for help
+void fn_80194F6C(Arg0* arg0, s32 arg1, s32 arg2){
+    switch (arg0->unk8 & 0xC0000000) {
+        case 0x80000000:
+            fn_80195720(arg0, arg2, arg1);
+            break;
+        case 0:
+            fn_801965BC(arg0, arg2, arg1, 0);
+            break;
+        case 0xC0000000:
+            fn_80197730(arg0, arg2, arg1);
+            break;
+    }
+}
+
 // fn_80194FF4 @ 0x80194FF4 size 0x78
-// fn_8019506C @ 0x8019506C size 0x88
-// fn_801950F4 @ 0x801950F4 size 0x78
+
+// special thanks to tgsm for help
+void fn_8019506C(Arg0* arg0, s32 arg1, s32 arg2, f32 fp1){
+    switch (arg0->unk8 & 0xC0000000) {
+        case 0x80000000:
+            fn_80195908(arg0, arg2, arg1);
+            break;
+        case 0:
+            fn_80196BDC(arg0, arg2, arg1, fp1, lbl_804A5D28);
+            break;
+        case 0xC0000000:
+            fn_80197824(arg0, arg2, arg1);
+            break;
+    }
+}
+
+
+void fn_801950F4(Arg0* arg0, s32 arg1, s32 arg2){
+    switch (arg0->unk8 & 0xC0000000) {
+        case 0x80000000:
+            fn_801959FC(arg0, arg2, arg1);
+            break;
+        case 0:
+            fn_801968CC(arg0, arg2, arg1, 0);
+            break;
+        case 0xC0000000:
+            break;
+    }
+}
+
 // fn_8019516C @ 0x8019516C size 0x58
 // fn_801951C4 @ 0x801951C4 size 0x4C
 // fn_80195210 @ 0x80195210 size 0x50
@@ -187,7 +285,7 @@ void fn_80194EEC(Arg4* arg0, s32 arg1){
 // fn_80197270 @ 0x80197270 size 0x1F4
 // fn_80197464 @ 0x80197464 size 0x104
 // fn_80197568 @ 0x80197568 size 0x104
-// fn_8019766C @ 0x8019766C size 0x4
+void fn_8019766C(void) {}
 // fn_80197670 @ 0x80197670 size 0xC0
 // fn_80197730 @ 0x80197730 size 0xF4
 // fn_80197824 @ 0x80197824 size 0xF4
@@ -204,22 +302,91 @@ void fn_80194EEC(Arg4* arg0, s32 arg1){
 // fn_80198158 @ 0x80198158 size 0x84
 // fn_801981DC @ 0x801981DC size 0x110
 // fn_801982EC @ 0x801982EC size 0x90
-// fn_8019837C @ 0x8019837C size 0x8
-// fn_80198384 @ 0x80198384 size 0x8
-// fn_8019838C @ 0x8019838C size 0x8
+s32 fn_8019837C(void* arg0){
+    return ((Arg1*)arg0)->unk38;
+}
+
+s32 fn_80198384(void* arg0){
+    return ((Arg1*)arg0)->unk38;
+}
+
+s32 fn_8019838C(void* arg0){
+    return ((Arg1*)arg0)->unk38;
+}
+
 // fn_80198394 @ 0x80198394 size 0x3C
-// fn_801983D0 @ 0x801983D0 size 0x5C
+void fn_801983D0(void* arg0){
+    u8*  p  = (u8*)arg0;
+    u32  z  = 0;
+
+    *(void**)(p + 0x60) = (void*)lbl_803841E8;
+
+    *(u32*)(p + 0x04) = z;
+
+    *(u8*)(p + 0x00)  = (u8)z;
+    *(u32*)(p + 0x10) = z;
+    *(u8*)(p + 0x0C)  = (u8)z;
+    *(u32*)(p + 0x1C) = z;
+    *(u8*)(p + 0x18)  = (u8)z;
+    *(u32*)(p + 0x28) = z;
+    *(u8*)(p + 0x24)  = (u8)z;
+    *(u32*)(p + 0x34) = z;
+    *(u8*)(p + 0x30)  = (u8)z;
+    *(u32*)(p + 0x40) = z;
+    *(u8*)(p + 0x3C)  = (u8)z;
+    *(u32*)(p + 0x4C) = z;
+    *(u8*)(p + 0x48)  = (u8)z;
+    *(u32*)(p + 0x58) = z;
+    *(u8*)(p + 0x54)  = (u8)z;
+    *(u32*)(p + 0x64) = z;
+    *(u32*)(p + 0x68) = z;
+}
 // fn_8019842C @ 0x8019842C size 0x178
-// fn_801985A4 @ 0x801985A4 size 0x38
+void fn_801985A4(void* a0, s32 a1, s32 arg2, s32 arg3, s32 arg4){
+    Frame fr;
+    register s32 a3 = arg4 + 0;
+
+    fr.sp24 = arg2;
+    fr.sp28 = arg2;
+    fr.sp2C = arg2;
+    fr.sp30 = arg3;
+
+    fn_801985DC(a0, a1, (s32*)((u8*)&fr + 8), a3);
+}
 // fn_801985DC @ 0x801985DC size 0x3CC
 // fn_801989A8 @ 0x801989A8 size 0x204
-// fn_80198BAC @ 0x80198BAC size 0x34
+
+
+void fn_80198BAC(void* unused_r3, s32 arg1, s32 arg2, s32 arg3, s32 arg4){
+    (void)unused_r3;
+    fn_8018C6A0(arg1, arg2, arg3, arg4, 0);
+}
+
 // fn_80198BE0 @ 0x80198BE0 size 0x144
-// fn_80198D24 @ 0x80198D24 size 0x60
-// fn_80198D84 @ 0x80198D84 size 0x4
-// fn_80198D88 @ 0x80198D88 size 0x10
-// fn_80198DA0 @ 0x80198DA0 size 0x4
-// fn_80198DC0 @ 0x80198DC0 size 0x4
+void fn_80198D24(void* arg0){
+    register Entry* var_r31 = (Entry*)arg0;
+    register u8     var_r30 = 0;
+
+    while ((u8)var_r30 < 8) {
+        if (var_r31->unk4 != 0) {
+            fn_80194F2C((Arg0_94F2C*)(u32)var_r31->unk4, 0);
+        }
+        var_r31 = (Entry*)((u8*)var_r31 + 0xC);
+        var_r30++;
+    }
+}
+void fn_80198D84(void) {}
+
+u8 fn_80198D88(u8 arg0) {
+    if (arg0 == 0) {
+        return 0U;
+    }
+    return arg0;
+}
+
+void fn_80198DA0(void) {}
+void fn_80198DC0(void) {}
+
 // fn_80198DE0 @ 0x80198DE0 size 0x4C
 // fn_80198E40 @ 0x80198E40 size 0x80
 // fn_80198EC0 @ 0x80198EC0 size 0xAC
