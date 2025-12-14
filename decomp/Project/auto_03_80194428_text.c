@@ -1,13 +1,5 @@
 #include "auto_03_80194428_text.h"
 
-/* ==== AUTO-GENERATED ASM ANNOTATIONS (do not edit by hand) ====
- * Source ASM: auto_03_80194428_text.s
- * Functions in ASM: 925
- * Implemented in C: 2
- * Missing in C:     923
- */
-/* ==== END AUTO-GENERATED ASM ANNOTATIONS ==== */
-
 void Channel_SetMixerLevel(f32 farg0) {
     lbl_804A0498 = (s16) (lbl_804A5DF0 * farg0);
 }
@@ -206,7 +198,7 @@ void fn_80194F2C(Arg0_94F2C* arg0, s32 arg1){
 }
 
 
-// special thanks to tgsm for help
+// special thanks to tgsm for help on fn_80194F6C
 void fn_80194F6C(Arg0* arg0, s32 arg1, s32 arg2){
     switch (arg0->unk8 & 0xC0000000) {
         case 0x80000000:
@@ -223,7 +215,7 @@ void fn_80194F6C(Arg0* arg0, s32 arg1, s32 arg2){
 
 // fn_80194FF4 @ 0x80194FF4 size 0x78
 
-// special thanks to tgsm for help
+// special thanks to tgsm for help on fn_8019506C
 void fn_8019506C(Arg0* arg0, s32 arg1, s32 arg2, f32 fp1){
     switch (arg0->unk8 & 0xC0000000) {
         case 0x80000000:
@@ -238,7 +230,7 @@ void fn_8019506C(Arg0* arg0, s32 arg1, s32 arg2, f32 fp1){
     }
 }
 
-
+// special thanks to tgsm for help on fn_801950F4
 void fn_801950F4(Arg0* arg0, s32 arg1, s32 arg2){
     switch (arg0->unk8 & 0xC0000000) {
         case 0x80000000:
@@ -290,7 +282,19 @@ void fn_8019766C(void) {}
 // fn_80197730 @ 0x80197730 size 0xF4
 // fn_80197824 @ 0x80197824 size 0xF4
 // fn_80197918 @ 0x80197918 size 0x6C
-// fn_80197984 @ 0x80197984 size 0x70
+u8 fn_80197984(void* arg0){
+    Obj80197984* o = (Obj80197984*)arg0;
+    u8 var_r31 = 0;
+
+    if ( ((u32)((o->unk8 & 0xC0000000u) + 0x40000000u) == 0u) &&
+        (fn_8019838C(arg0) != 0u) &&
+        (o->unk1 == 3u) )
+    {
+        var_r31 = (u8)fn_801917E4();
+    }
+
+    return var_r31;
+}
 // fn_801979F4 @ 0x801979F4 size 0x38C
 // fn_80197D80 @ 0x80197D80 size 0x68
 // fn_80197DE8 @ 0x80197DE8 size 0x88
@@ -394,22 +398,44 @@ void fn_80198DC0(void) {}
 // fn_80199060 @ 0x80199060 size 0xDC
 // fn_80199140 @ 0x80199140 size 0xF8
 // fn_80199240 @ 0x80199240 size 0x8C
-// fn_801992E0 @ 0x801992E0 size 0xC
+void fn_801992E0(s32 arg0, s8 arg1) {
+    lbl_804A1E8C = arg0;
+    lbl_804A1E90 = arg1;
+}
+
 // fn_80199300 @ 0x80199300 size 0x188
 // fn_801994A0 @ 0x801994A0 size 0xA8
-// fn_80199560 @ 0x80199560 size 0x8
-// fn_80199580 @ 0x80199580 size 0x34
+
+void fn_80199560(s32 arg0) {
+    lbl_804A049C = arg0;
+}
+
+void fn_80199580(f32 chan_level, f32 mixer_level){
+    Channel_SetMixerLevel(chan_level);
+    DsetMixerLevel(mixer_level);
+}
 // fn_801995C0 @ 0x801995C0 size 0x30
 // fn_80199600 @ 0x80199600 size 0x3C
 // fn_80199640 @ 0x80199640 size 0xFC
 // fn_80199740 @ 0x80199740 size 0x2C
 // fn_80199780 @ 0x80199780 size 0xE0
-// fn_80199860 @ 0x80199860 size 0x8
+void fn_80199860(s32 arg0) {
+    lbl_804A1EBC = arg0;
+}
+
+
 // fn_80199880 @ 0x80199880 size 0x38
 // fn_801998C0 @ 0x801998C0 size 0x60
 // fn_80199920 @ 0x80199920 size 0xA8
-// fn_801999E0 @ 0x801999E0 size 0x8
-// fn_80199A00 @ 0x80199A00 size 0x8
+
+void fn_801999E0(s32 arg0) {
+    lbl_804A1EC4 = arg0;
+}
+
+
+s32 fn_80199A00(void) {
+    return lbl_804A1EC4;
+}
 // fn_80199A20 @ 0x80199A20 size 0x44
 // fn_80199A80 @ 0x80199A80 size 0x80
 // fn_80199B00 @ 0x80199B00 size 0x68
@@ -420,10 +446,25 @@ void fn_80198DC0(void) {}
 // fn_80199E60 @ 0x80199E60 size 0x39C
 // fn_8019A200 @ 0x8019A200 size 0x250
 // fn_8019A460 @ 0x8019A460 size 0x48
-// fn_8019A4C0 @ 0x8019A4C0 size 0x40
-// fn_8019A500 @ 0x8019A500 size 0x24
+void fn_8019A4C0(void){
+    if ((s8)lbl_804A1EE8 == 0) {
+        lbl_804A1EE4 = 0;
+        lbl_804A1EE8 = 1;
+    }
+    fn_8019A200(2);
+}
+
+
+void fn_8019A500(void){
+    fn_8019A200(1);
+}
 // fn_8019A540 @ 0x8019A540 size 0x1F8
-// fn_8019A740 @ 0x8019A740 size 0x24
+
+
+void fn_8019A740(void){
+    fn_8019A540(1);
+}
+
 // fn_8019A780 @ 0x8019A780 size 0x2C
 // fn_8019A7C0 @ 0x8019A7C0 size 0x50
 // fn_8019A820 @ 0x8019A820 size 0x48
@@ -437,13 +478,27 @@ void fn_80198DC0(void) {}
 // fn_8019AC80 @ 0x8019AC80 size 0x88
 // fn_8019AD20 @ 0x8019AD20 size 0x48
 // fn_8019AD80 @ 0x8019AD80 size 0x44
-// fn_8019ADE0 @ 0x8019ADE0 size 0x24
+void fn_8019ADE0(s32* arg0){
+    fn_8019AD80(arg0, *arg0);
+}
 // fn_8019AE20 @ 0x8019AE20 size 0xC0
 // fn_8019AEE0 @ 0x8019AEE0 size 0x84
 // fn_8019AF80 @ 0x8019AF80 size 0x38
 // fn_8019AFC0 @ 0x8019AFC0 size 0x30
-// fn_8019B000 @ 0x8019B000 size 0x40
-// fn_8019B040 @ 0x8019B040 size 0x10
+void fn_8019B000(void){
+    register u32 flag;
+
+    if ((flag = lbl_804A1F0C) != 0U) {
+        fn_8019AFC0(lbl_804A1F08, flag, lbl_804A1F04);
+        lbl_804A1F0C = 0U;
+        lbl_804A1F08 = 0;
+    }
+}
+
+
+void fn_8019B040(void) {
+    lbl_804A1F34 -= 1;
+}
 // fn_8019B060 @ 0x8019B060 size 0x214
 // fn_8019B280 @ 0x8019B280 size 0x84
 // fn_8019B320 @ 0x8019B320 size 0x70
@@ -451,8 +506,17 @@ void fn_80198DC0(void) {}
 // fn_8019B420 @ 0x8019B420 size 0x40
 // fn_8019B460 @ 0x8019B460 size 0x64
 // fn_8019B4E0 @ 0x8019B4E0 size 0xB4
-// fn_8019B5A0 @ 0x8019B5A0 size 0xC
-// fn_8019B5C0 @ 0x8019B5C0 size 0x38
+void fn_8019B5A0(void) {
+    lbl_804A1F18 = 1;
+}
+
+
+void fn_8019B5C0(void){
+    if (lbl_804A1F18 == 1) {
+        OSWakeupThread(lbl_804A1F10);
+    }
+    lbl_804A1F18 = 0;
+}
 // fn_8019B600 @ 0x8019B600 size 0x9C
 // fn_8019B6A0 @ 0x8019B6A0 size 0x80
 // fn_8019C6A0 @ 0x8019C6A0 size 0x20
@@ -460,8 +524,17 @@ void fn_80198DC0(void) {}
 // fn_8019C720 @ 0x8019C720 size 0x70
 // fn_8019C7A0 @ 0x8019C7A0 size 0x30
 // fn_8019C7E0 @ 0x8019C7E0 size 0x44
-// fn_8019C824 @ 0x8019C824 size 0x4
-// fn_8019C840 @ 0x8019C840 size 0x14
+void fn_8019C824(void) {}
+
+
+void fn_8019C840(void** arg0, LinkNode* arg1){
+    void* temp_r0;
+
+    temp_r0 = *arg0;
+    arg1->unk8 = arg0;
+    *arg0 = arg1;
+    arg1->unk24 = temp_r0;
+}
 // fn_8019C860 @ 0x8019C860 size 0x90
 // fn_8019C900 @ 0x8019C900 size 0x60
 // fn_8019C960 @ 0x8019C960 size 0xF0
@@ -469,16 +542,38 @@ void fn_80198DC0(void) {}
 // fn_8019CB40 @ 0x8019CB40 size 0x70
 // fn_8019CBC0 @ 0x8019CBC0 size 0xFC
 // fn_8019CCC0 @ 0x8019CCC0 size 0x138
-// fn_8019CE00 @ 0x8019CE00 size 0x30
+void fn_8019CE00(Obj_19CE00* arg0){
+    arg0->unk20 = 0;
+    arg0->unk24 = 0;
+    arg0->unk4  = 0;
+    fn_8019CCC0();
+}
 // fn_8019CE40 @ 0x8019CE40 size 0x7C
 // fn_8019CEC0 @ 0x8019CEC0 size 0xD8
 // fn_8019CFA0 @ 0x8019CFA0 size 0xD8
-// fn_8019D080 @ 0x8019D080 size 0x38
+void fn_8019D080(void* arg0){
+    typedef struct Obj_19D080 {
+        u8  pad0[0x20];
+        u8* unk20;
+    } Obj_19D080;
+
+    Obj_19D080* o = (Obj_19D080*)arg0;
+
+    fn_8019CFA0();
+    fn_8019EBE0(*o->unk20);
+}
 // fn_8019D0C0 @ 0x8019D0C0 size 0x348
 // fn_8019D420 @ 0x8019D420 size 0x68
 // fn_8019D4A0 @ 0x8019D4A0 size 0x334
 // fn_8019D7E0 @ 0x8019D7E0 size 0x78
-// fn_8019D860 @ 0x8019D860 size 0x28
+s32 fn_8019D860(void* arg0){
+    Obj_19D860* o = (Obj_19D860*)arg0;
+
+    if ((o->unk10 == 0U) && (o->unkC == 0)) {
+        return 0;
+    }
+    return 1;
+}
 // fn_8019D8A0 @ 0x8019D8A0 size 0x144
 // fn_8019DA00 @ 0x8019DA00 size 0x74
 // fn_8019DA80 @ 0x8019DA80 size 0xB0
@@ -497,7 +592,10 @@ void fn_80198DC0(void) {}
 // fn_8019E3C0 @ 0x8019E3C0 size 0xA0
 // fn_8019E460 @ 0x8019E460 size 0x254
 // fn_8019E6C0 @ 0x8019E6C0 size 0x18
-// fn_8019E6E0 @ 0x8019E6E0 size 0x14
+
+void* fn_8019E6E0(s32 arg0){
+    return (void*)(lbl_8044B3C0 + (((u32)arg0 << 5) & 0x1FE0u));
+}
 // fn_8019E700 @ 0x8019E700 size 0x2C
 // fn_8019E740 @ 0x8019E740 size 0x20
 // fn_8019E760 @ 0x8019E760 size 0x38
@@ -524,9 +622,17 @@ void fn_80198DC0(void) {}
 // fn_8019EEC0 @ 0x8019EEC0 size 0x24
 // fn_8019EF00 @ 0x8019EF00 size 0x270
 // fn_8019F180 @ 0x8019F180 size 0x68
-// fn_8019F200 @ 0x8019F200 size 0x24
+void fn_8019F200(void* arg0, s32 arg1){
+    fn_8019F180(arg0, arg1, (s32)((Arg0*)arg0)->unk8);
+}
 // fn_8019F240 @ 0x8019F240 size 0x2C
-// fn_8019F280 @ 0x8019F280 size 0x28
+s32 fn_8019F280(u32 arg0){
+    if (arg0 >= 0x100U) {
+        return 0;
+    }
+    return (s32)lbl_8044B440[arg0];
+}
+
 // fn_8019F2C0 @ 0x8019F2C0 size 0x38
 // fn_8019F300 @ 0x8019F300 size 0x2A0
 // fn_8019F5A0 @ 0x8019F5A0 size 0x84
@@ -539,8 +645,15 @@ void fn_80198DC0(void) {}
 // fn_8019FB40 @ 0x8019FB40 size 0x44
 // fn_8019FBA0 @ 0x8019FBA0 size 0x10C
 // fn_8019FCC0 @ 0x8019FCC0 size 0x74
-// fn_8019FD40 @ 0x8019FD40 size 0x18
-// fn_8019FD60 @ 0x8019FD60 size 0x18
+u16 fn_8019FD40(s32 arg0){
+    u32 off = (u32)((arg0 * 2) & 0x1FFFE);
+    return *(u16*)(lbl_8044C040 + off);
+}
+
+u16 fn_8019FD60(s32 arg0){
+    u32 off = (u32)((arg0 * 2) & 0x1FFFE);
+    return *(u16*)(lbl_8044C240 + off);
+}
 // fn_8019FD80 @ 0x8019FD80 size 0x50
 // fn_8019FDE0 @ 0x8019FDE0 size 0x50
 // fn_8019FE40 @ 0x8019FE40 size 0x3C
@@ -553,7 +666,10 @@ void fn_80198DC0(void) {}
 // fn_801A01A0 @ 0x801A01A0 size 0x48
 // fn_801A0200 @ 0x801A0200 size 0x3D4
 // fn_801A05E0 @ 0x801A05E0 size 0x1C0
-// fn_801A07A0 @ 0x801A07A0 size 0x24
+s32 fn_801A07A0(void) {
+    return fn_801A05E0() & 0x7FFFFFFF;
+}
+
 // fn_801A07E0 @ 0x801A07E0 size 0x54
 // fn_801A0840 @ 0x801A0840 size 0x64
 // fn_801A08C0 @ 0x801A08C0 size 0x68
@@ -576,9 +692,17 @@ void fn_80198DC0(void) {}
 // fn_801A1160 @ 0x801A1160 size 0x50
 // fn_801A11C0 @ 0x801A11C0 size 0x4C
 // fn_801A1220 @ 0x801A1220 size 0x30
-// fn_801A1260 @ 0x801A1260 size 0x10
+void fn_801A1260(void* arg0){
+    Fn801A1260_Obj* p = (Fn801A1260_Obj*)arg0;
+    p->unk0 = 0;
+    p->unk4 = 0;
+}
+
 // fn_801A1280 @ 0x801A1280 size 0x3C
-// fn_801A12C0 @ 0x801A12C0 size 0x28
+void fn_801A12C0(void* a0){
+    fn_801A1300(a0, 0, 0);
+}
+
 // fn_801A1300 @ 0x801A1300 size 0x138
 // fn_801A1440 @ 0x801A1440 size 0x7C
 // fn_801A14C0 @ 0x801A14C0 size 0x80
@@ -621,8 +745,28 @@ void fn_80198DC0(void) {}
 // fn_801A3640 @ 0x801A3640 size 0x30
 // fn_801A3680 @ 0x801A3680 size 0xA8
 // fn_801A3740 @ 0x801A3740 size 0x8C
-// fn_801A37E0 @ 0x801A37E0 size 0x18
-// fn_801A3800 @ 0x801A3800 size 0x38
+void fn_801A37E0(void* arg0){
+    Fn801A37E0_Obj* p = (Fn801A37E0_Obj*)arg0;
+    p->unk8 = 0;
+    p->unkA = 0;
+    p->unk0 = 0;
+    p->unk4 = 0;
+}
+
+s32 fn_801A3800(Fn801A3800_Arg0* arg0, Fn801A3800_Arg1* arg1){
+    if (arg0 == 0) {
+        return 0;
+    }
+    if (arg1 == 0) {
+        return 0;
+    }
+
+    arg0->unk2A8 = arg1;
+    arg1->unk4 = arg1->unk4 + 1;
+
+    return 1;
+}
+
 // fn_801A3840 @ 0x801A3840 size 0x44
 // fn_801A38A0 @ 0x801A38A0 size 0xA4
 // fn_801A3960 @ 0x801A3960 size 0x24
@@ -645,7 +789,10 @@ void fn_80198DC0(void) {}
 // fn_801A48E0 @ 0x801A48E0 size 0x28
 // fn_801A4920 @ 0x801A4920 size 0x60
 // fn_801A4980 @ 0x801A4980 size 0x1C
-// fn_801A49A0 @ 0x801A49A0 size 0x20
+
+void fn_801A49A0(void){
+    fn_801A47E0();
+}
 // fn_801A49C0 @ 0x801A49C0 size 0x48
 // fn_801A4A20 @ 0x801A4A20 size 0x78
 // fn_801A4AA0 @ 0x801A4AA0 size 0x54
@@ -669,8 +816,16 @@ void fn_80198DC0(void) {}
 // fn_801A5020 @ 0x801A5020 size 0x1C
 // fn_801A5040 @ 0x801A5040 size 0x44
 // fn_801A50A0 @ 0x801A50A0 size 0x30
-// fn_801A50E0 @ 0x801A50E0 size 0x14
-// fn_801A5100 @ 0x801A5100 size 0x14
+s32 fn_801A50E0(void){
+    lbl_804A1FB0->unk3A0 = 0;
+    return 0;
+}
+
+
+s32 fn_801A5100(void){
+    lbl_804A1FB0->unk3A0 = 1;
+    return 0;
+}
 // fn_801A5120 @ 0x801A5120 size 0x2C
 // fn_801A5160 @ 0x801A5160 size 0x34
 // fn_801A51A0 @ 0x801A51A0 size 0x2C
@@ -682,7 +837,10 @@ void fn_80198DC0(void) {}
 // fn_801A5340 @ 0x801A5340 size 0x50
 // fn_801A53A0 @ 0x801A53A0 size 0x50
 // fn_801A5400 @ 0x801A5400 size 0xCC
-// fn_801A54E0 @ 0x801A54E0 size 0x8
+s32 fn_801A54E0(void) {
+    return 0;
+}
+
 // fn_801A5500 @ 0x801A5500 size 0xAC
 // fn_801A55C0 @ 0x801A55C0 size 0x94
 // fn_801A5660 @ 0x801A5660 size 0x44
@@ -696,7 +854,9 @@ void fn_80198DC0(void) {}
 // fn_801A5C80 @ 0x801A5C80 size 0xA8
 // fn_801A5D40 @ 0x801A5D40 size 0x380
 // fn_801A60C0 @ 0x801A60C0 size 0x90
-// fn_801A6160 @ 0x801A6160 size 0x24
+void fn_801A6160(void* a0, s32 a1){
+    fn_801A60C0(a0, a1, 0);
+}
 // fn_801A61A0 @ 0x801A61A0 size 0x58
 // fn_801A6200 @ 0x801A6200 size 0x64
 // fn_801A6280 @ 0x801A6280 size 0xB0
@@ -718,7 +878,11 @@ void fn_80198DC0(void) {}
 // fn_801A7020 @ 0x801A7020 size 0x3C
 // fn_801A7060 @ 0x801A7060 size 0x3C
 // fn_801A70A0 @ 0x801A70A0 size 0x4C
-// fn_801A7100 @ 0x801A7100 size 0x10
+void fn_801A7100(void* arg0){
+    Obj_801A7100* p = (Obj_801A7100*)arg0;
+    p->unk36C = 0x0F;
+    p->unk36D = 0x0F;
+}
 // fn_801A7120 @ 0x801A7120 size 0x4C
 // fn_801A7180 @ 0x801A7180 size 0x94
 // fn_801A7220 @ 0x801A7220 size 0xB0
@@ -731,7 +895,9 @@ void fn_80198DC0(void) {}
 // fn_801A75E0 @ 0x801A75E0 size 0x30
 // fn_801A7620 @ 0x801A7620 size 0x90
 // fn_801A76C0 @ 0x801A76C0 size 0xC8
-// fn_801A77A0 @ 0x801A77A0 size 0x8
+void fn_801A77A0(void* arg0, s8 arg1){
+    ((Obj_801A77A0*)arg0)->unk2 = arg1;
+}
 // fn_801A77C0 @ 0x801A77C0 size 0x30
 // fn_801A7800 @ 0x801A7800 size 0xB0
 // fn_801A78C0 @ 0x801A78C0 size 0x1D8
@@ -739,7 +905,16 @@ void fn_80198DC0(void) {}
 // fn_801A7D20 @ 0x801A7D20 size 0x20C
 // fn_801A7F40 @ 0x801A7F40 size 0x128
 // fn_801A8080 @ 0x801A8080 size 0x34
-// fn_801A80C0 @ 0x801A80C0 size 0x28
+f32 fn_801A80C0(f32 farg0) {
+    if (farg0 < lbl_804A5F00) {
+        return lbl_804A5F00;
+    }
+    if (farg0 > lbl_804A5F04) {
+        return lbl_804A5F04;
+    }
+    return farg0;
+}
+
 // fn_801A8100 @ 0x801A8100 size 0x54
 // fn_801A8160 @ 0x801A8160 size 0x68
 // fn_801A81E0 @ 0x801A81E0 size 0x138
@@ -751,7 +926,11 @@ void fn_80198DC0(void) {}
 // fn_801A8780 @ 0x801A8780 size 0x44
 // fn_801A87E0 @ 0x801A87E0 size 0x44
 // fn_801A8840 @ 0x801A8840 size 0x2C
-// fn_801A8880 @ 0x801A8880 size 0x10
+void fn_801A8880(void* arg0, s8 arg1){
+    Obj801A8880* o = (Obj801A8880*)arg0;
+    o->unk2 = arg1;
+    o->unk3 = 1;
+}
 // fn_801A88A0 @ 0x801A88A0 size 0x14C
 // fn_801A8A00 @ 0x801A8A00 size 0xE8
 // fn_801A8AE8 @ 0x801A8AE8 size 0xD4
@@ -765,7 +944,8 @@ void fn_80198DC0(void) {}
 // fn_801A8FEC @ 0x801A8FEC size 0xDC
 // fn_801A90C8 @ 0x801A90C8 size 0x4C
 // fn_801A9114 @ 0x801A9114 size 0x50
-// fn_801A9164 @ 0x801A9164 size 0x4
+void fn_801A9164(void) {}
+
 // fn_801A9168 @ 0x801A9168 size 0xD4
 // fn_801A923C @ 0x801A923C size 0xE0
 // fn_801A931C @ 0x801A931C size 0x34
@@ -800,16 +980,28 @@ void fn_80198DC0(void) {}
 // fn_801ABCE4 @ 0x801ABCE4 size 0x94
 // fn_801ABD78 @ 0x801ABD78 size 0x17C
 // fn_801ABEF4 @ 0x801ABEF4 size 0xC8
-// fn_801ABFBC @ 0x801ABFBC size 0x4
-// fn_801ABFC0 @ 0x801ABFC0 size 0x4
+void fn_801ABFBC(void) {}
+
+
+void fn_801ABFC0(void) {}
+
 // fn_801ABFC4 @ 0x801ABFC4 size 0x64
 // fn_801AC028 @ 0x801AC028 size 0x38
 // fn_801AC060 @ 0x801AC060 size 0x5E0
 // fn_801AC640 @ 0x801AC640 size 0x3C
-// fn_801AC67C @ 0x801AC67C size 0x8
+s32 fn_801AC67C(void) {
+    return 0;
+}
+
 // fn_801AC684 @ 0x801AC684 size 0x3C
 // fn_801AC6C0 @ 0x801AC6C0 size 0x2A8
-// fn_801AC968 @ 0x801AC968 size 0x30
+s32 fn_801AC968(void* unused, u32 arg1){
+    (void)unused;
+    if (arg1 == 0U) {
+        return 0;
+    }
+    return fn_801ABCE4();
+}
 // fn_801AC998 @ 0x801AC998 size 0xB8
 // fn_801ACA50 @ 0x801ACA50 size 0x74
 // fn_801ACAC4 @ 0x801ACAC4 size 0x708
@@ -823,7 +1015,17 @@ void fn_80198DC0(void) {}
 // fn_801ADD4C @ 0x801ADD4C size 0xD0
 // fn_801ADE1C @ 0x801ADE1C size 0x1E8
 // fn_801AE004 @ 0x801AE004 size 0x358
-// fn_801AE35C @ 0x801AE35C size 0x64
+void* fn_801AE35C(void* arg0, s16 arg1){
+    if (arg0 != 0) {
+        ((Obj801AE35C*)arg0)->unk54 = (void*)lbl_80386E38;
+        fn_801D0398(arg0, 0);
+        if (arg1 > 0) {
+            __dl__FPv(arg0);
+        }
+    }
+    return arg0;
+}
+
 // fn_801AE3C0 @ 0x801AE3C0 size 0x94
 // fn_801AE454 @ 0x801AE454 size 0x3EC
 // fn_801AE840 @ 0x801AE840 size 0xC4
@@ -836,375 +1038,138 @@ void fn_80198DC0(void) {}
 // fn_801AF3E8 @ 0x801AF3E8 size 0x400
 // fn_801AF7E8 @ 0x801AF7E8 size 0x200
 // fn_801AF9E8 @ 0x801AF9E8 size 0x444
-// fn_801AFE2C @ 0x801AFE2C size 0x14
+void fn_801AFE2C(void* unused, f32* arg1, f32* arg2){
+    f32 temp = *arg1;
+    *arg1 = *arg2;
+    *arg2 = temp;
+    (void)unused;
+}
+
 // fn_801AFE40 @ 0x801AFE40 size 0x144
 // fn_801AFF84 @ 0x801AFF84 size 0x144
 // fn_801B00C8 @ 0x801B00C8 size 0x404
 // fn_801B04CC @ 0x801B04CC size 0xA4
 // fn_801B0570 @ 0x801B0570 size 0x70
 // fn_801B05E0 @ 0x801B05E0 size 0xD0
-// fn_801B06B0 @ 0x801B06B0 size 0x38
+s8 fn_801B06B0(void* arg0, s8 arg1){
+    Obj0* o = (Obj0*)arg0;
+    ObjE0* p = o->unkE0;
+
+    if (p == 0) {
+        return 0;
+    }
+
+    if ((u16)p->unkC->unk4 != 0x11) {
+        return 0;
+    }
+
+    o->unkCE = arg1;
+    return arg1;
+}
 // fn_801B06E8 @ 0x801B06E8 size 0x68
 // fn_801B0750 @ 0x801B0750 size 0x11C
 // fn_801B086C @ 0x801B086C size 0xB0
-// fn_801B091C @ 0x801B091C size 0x4C
-// fn_801B0968 @ 0x801B0968 size 0x90
-// fn_801B09F8 @ 0x801B09F8 size 0x58
-// fn_801B0A50 @ 0x801B0A50 size 0x28
-// fn_801B0A78 @ 0x801B0A78 size 0x34
-// fn_801B0AAC @ 0x801B0AAC size 0x28
-// fn_801B0AD4 @ 0x801B0AD4 size 0x28
-// fn_801B0AFC @ 0x801B0AFC size 0x34
+Obj* fn_801B091C(Obj* self, s16 freeFlag){
+    if (self != 0) {
+        self->vptr = (void*)&lbl_80386E90;
+        if (freeFlag > 0) {
+            __dl__FPv(self);
+        }
+    }
+    return self;
+}
+
+
+void* fn_801B0968(void* arg0){
+    s32 unused1, unused2;
+    Obj801B0968* o = (Obj801B0968*)arg0;
+
+    fn_801BA53C();
+    fn_801BA994();
+    fn_801BA73C();
+    fn_801BA860();
+
+    o->unk34 = 0;
+    PSMTXIdentity(o);
+
+    o->unk4C  = 1;
+    o->unk50  = 0;
+    o->unk38  = 0;
+    o->unk40  = 0;
+    o->unk44  = 0;
+    o->unk48  = 0;
+    o->unk54  = 0;
+
+    o->unk104 = 0;
+    o->unk108 = 0;
+    o->unk10C = 0;
+    o->unk110 = 0;
+    o->unk114 = 0;
+    o->unk100 = 0;
+    o->unk118 = 0;
+
+    return arg0;
+}
+
+
+s32 fn_801B09F8(void) {
+    if ((s8) lbl_804A1FCC == 0) {
+        lbl_804A1FC8 = 0;
+        lbl_804A1FCC = 1;
+    }
+    lbl_804A1FC8 += 1;
+    lbl_804A1FC8 %= 0xA;
+    return lbl_804A1FC8;
+}
+
+
+void fn_801B0A50(void* unused, s32 arg1, const void* arg2){
+    (void)unused;
+
+    arg1 = arg1 * 3;
+    GXLoadPosMtxImm(arg2, arg1);
+}
+
+
+void fn_801B0A78(void* arg0, s32 arg1, u16 arg2){
+    Obj801B0A78* o = (Obj801B0A78*)arg0;
+
+    u32 off = (u32)arg2 * 0x30;
+    const void* mtx = (const void*)(o->unk104 + off);
+
+    GXLoadPosMtxImm(mtx, arg1 * 3);
+}
+
+
+void fn_801B0AAC(void* unused, s32 arg1, s32 arg2){
+    (void)unused;
+    arg1 = arg1 * 3;
+    GXLoadNrmMtxImm(arg2, arg1);
+}
+
+
+void fn_801B0AD4(void* unused, s32 arg1, const void* arg2){
+    (void)unused;
+    arg1 = arg1 * 3;
+    GXLoadNrmMtxImm3x3(arg2, arg1);
+}
+
+
+void fn_801B0AFC(void* arg0, s32 arg1, u16 arg2){
+    Obj801B0AFC* o = (Obj801B0AFC*)arg0;
+
+    u32 off = (u32)arg2 * 0x24;
+    void* mtx = (void*)(o->unk108 + off);
+
+    GXLoadNrmMtxImm3x3(mtx, arg1 * 3);
+}
 // fn_801B0B30 @ 0x801B0B30 size 0x774
-// gap_03_80198D98_text @ 0x80198D98 size 0x8
-// gap_03_80198DA4_text @ 0x80198DA4 size 0x1C
-// gap_03_80198DC4_text @ 0x80198DC4 size 0x1C
-// gap_03_80198E2C_text @ 0x80198E2C size 0x14
-// gap_03_80198F6C_text @ 0x80198F6C size 0x14
-// gap_03_8019905C_text @ 0x8019905C size 0x4
-// gap_03_8019913C_text @ 0x8019913C size 0x4
-// gap_03_80199238_text @ 0x80199238 size 0x8
-// gap_03_801992CC_text @ 0x801992CC size 0x14
-// gap_03_801992EC_text @ 0x801992EC size 0x14
-// gap_03_80199488_text @ 0x80199488 size 0x18
-// gap_03_80199548_text @ 0x80199548 size 0x18
-// gap_03_80199568_text @ 0x80199568 size 0x18
-// gap_03_801995B4_text @ 0x801995B4 size 0xC
-// gap_03_801995F0_text @ 0x801995F0 size 0x10
-// gap_03_8019963C_text @ 0x8019963C size 0x4
-// gap_03_8019973C_text @ 0x8019973C size 0x4
-// gap_03_8019976C_text @ 0x8019976C size 0x14
-// gap_03_80199868_text @ 0x80199868 size 0x18
-// gap_03_801998B8_text @ 0x801998B8 size 0x8
-// gap_03_801999C8_text @ 0x801999C8 size 0x18
-// gap_03_801999E8_text @ 0x801999E8 size 0x18
-// gap_03_80199A08_text @ 0x80199A08 size 0x18
-// gap_03_80199A64_text @ 0x80199A64 size 0x1C
-// gap_03_80199B68_text @ 0x80199B68 size 0x18
-// gap_03_80199BC4_text @ 0x80199BC4 size 0x1C
-// gap_03_80199D0C_text @ 0x80199D0C size 0x14
-// gap_03_80199D44_text @ 0x80199D44 size 0x1C
-// gap_03_80199E54_text @ 0x80199E54 size 0xC
-// gap_03_8019A1FC_text @ 0x8019A1FC size 0x4
-// gap_03_8019A450_text @ 0x8019A450 size 0x10
-// gap_03_8019A4A8_text @ 0x8019A4A8 size 0x18
-// gap_03_8019A524_text @ 0x8019A524 size 0x1C
-// gap_03_8019A738_text @ 0x8019A738 size 0x8
-// gap_03_8019A764_text @ 0x8019A764 size 0x1C
-// gap_03_8019A7AC_text @ 0x8019A7AC size 0x14
-// gap_03_8019A810_text @ 0x8019A810 size 0x10
-// gap_03_8019A868_text @ 0x8019A868 size 0x18
-// gap_03_8019A924_text @ 0x8019A924 size 0x1C
-// gap_03_8019A9BC_text @ 0x8019A9BC size 0x4
-// gap_03_8019AA3C_text @ 0x8019AA3C size 0x4
-// gap_03_8019AACC_text @ 0x8019AACC size 0x14
-// gap_03_8019AC24_text @ 0x8019AC24 size 0x1C
-// gap_03_8019AC7C_text @ 0x8019AC7C size 0x4
-// gap_03_8019AD08_text @ 0x8019AD08 size 0x18
-// gap_03_8019AD68_text @ 0x8019AD68 size 0x18
-// gap_03_8019ADC4_text @ 0x8019ADC4 size 0x1C
-// gap_03_8019AE04_text @ 0x8019AE04 size 0x1C
-// gap_03_8019AF64_text @ 0x8019AF64 size 0x1C
-// gap_03_8019AFB8_text @ 0x8019AFB8 size 0x8
-// gap_03_8019AFF0_text @ 0x8019AFF0 size 0x10
-// gap_03_8019B050_text @ 0x8019B050 size 0x10
-// gap_03_8019B274_text @ 0x8019B274 size 0xC
-// gap_03_8019B304_text @ 0x8019B304 size 0x1C
-// gap_03_8019B390_text @ 0x8019B390 size 0x10
-// gap_03_8019B410_text @ 0x8019B410 size 0x10
-// gap_03_8019B4C4_text @ 0x8019B4C4 size 0x1C
-// gap_03_8019B594_text @ 0x8019B594 size 0xC
-// gap_03_8019B5AC_text @ 0x8019B5AC size 0x14
-// gap_03_8019B5F8_text @ 0x8019B5F8 size 0x8
-// gap_03_8019B69C_text @ 0x8019B69C size 0x4
-// gap_03_8019B794_text @ 0x8019B794 size 0xC
-// gap_03_8019BA24_text @ 0x8019BA24 size 0x1C
-// gap_03_8019BAD8_text @ 0x8019BAD8 size 0x8
-// gap_03_8019BB68_text @ 0x8019BB68 size 0x18
-// gap_03_8019BBC8_text @ 0x8019BBC8 size 0x18
-// gap_03_8019BC18_text @ 0x8019BC18 size 0x8
-// gap_03_8019BC68_text @ 0x8019BC68 size 0x18
-// gap_03_8019BCA4_text @ 0x8019BCA4 size 0x1C
-// gap_03_8019BD08_text @ 0x8019BD08 size 0x18
-// gap_03_8019BD54_text @ 0x8019BD54 size 0xC
-// gap_03_8019BD9C_text @ 0x8019BD9C size 0x4
-// gap_03_8019BE0C_text @ 0x8019BE0C size 0x14
-// gap_03_8019BE30_text @ 0x8019BE30 size 0x10
-// gap_03_8019BE78_text @ 0x8019BE78 size 0x8
-// gap_03_8019BEB8_text @ 0x8019BEB8 size 0x8
-// gap_03_8019BF3C_text @ 0x8019BF3C size 0x4
-// gap_03_8019C0BC_text @ 0x8019C0BC size 0x4
-// gap_03_8019C104_text @ 0x8019C104 size 0x1C
-// gap_03_8019C1AC_text @ 0x8019C1AC size 0x14
-// gap_03_8019C470_text @ 0x8019C470 size 0x10
-// gap_03_8019C684_text @ 0x8019C684 size 0x1C
-// gap_03_8019C70C_text @ 0x8019C70C size 0x14
-// gap_03_8019C790_text @ 0x8019C790 size 0x10
-// gap_03_8019C7D0_text @ 0x8019C7D0 size 0x10
-// gap_03_8019C828_text @ 0x8019C828 size 0x18
-// gap_03_8019C854_text @ 0x8019C854 size 0xC
-// gap_03_8019C8F0_text @ 0x8019C8F0 size 0x10
-// gap_03_8019CA50_text @ 0x8019CA50 size 0x10
-// gap_03_8019CB38_text @ 0x8019CB38 size 0x8
-// gap_03_8019CBB0_text @ 0x8019CBB0 size 0x10
-// gap_03_8019CCBC_text @ 0x8019CCBC size 0x4
-// gap_03_8019CDF8_text @ 0x8019CDF8 size 0x8
-// gap_03_8019CE30_text @ 0x8019CE30 size 0x10
-// gap_03_8019CEBC_text @ 0x8019CEBC size 0x4
-// gap_03_8019CF98_text @ 0x8019CF98 size 0x8
-// gap_03_8019D078_text @ 0x8019D078 size 0x8
-// gap_03_8019D0B8_text @ 0x8019D0B8 size 0x8
-// gap_03_8019D408_text @ 0x8019D408 size 0x18
-// gap_03_8019D488_text @ 0x8019D488 size 0x18
-// gap_03_8019D7D4_text @ 0x8019D7D4 size 0xC
-// gap_03_8019D858_text @ 0x8019D858 size 0x8
-// gap_03_8019D888_text @ 0x8019D888 size 0x18
-// gap_03_8019D9E4_text @ 0x8019D9E4 size 0x1C
-// gap_03_8019DA74_text @ 0x8019DA74 size 0xC
-// gap_03_8019DB30_text @ 0x8019DB30 size 0x10
-// gap_03_8019DBA4_text @ 0x8019DBA4 size 0x1C
-// gap_03_8019DCBC_text @ 0x8019DCBC size 0x4
-// gap_03_8019DD84_text @ 0x8019DD84 size 0x1C
-// gap_03_8019DDEC_text @ 0x8019DDEC size 0x14
-// gap_03_8019DE38_text @ 0x8019DE38 size 0x8
-// gap_03_8019DFB4_text @ 0x8019DFB4 size 0xC
-// gap_03_8019E09C_text @ 0x8019E09C size 0x4
-// gap_03_8019E1A4_text @ 0x8019E1A4 size 0x1C
-// gap_03_8019E298_text @ 0x8019E298 size 0x8
-// gap_03_8019E31C_text @ 0x8019E31C size 0x4
-// gap_03_8019E6B4_text @ 0x8019E6B4 size 0xC
-// gap_03_8019E6D8_text @ 0x8019E6D8 size 0x8
-// gap_03_8019E6F4_text @ 0x8019E6F4 size 0xC
-// gap_03_8019E72C_text @ 0x8019E72C size 0x14
-// gap_03_8019E798_text @ 0x8019E798 size 0x8
-// gap_03_8019E7E4_text @ 0x8019E7E4 size 0x1C
-// gap_03_8019E82C_text @ 0x8019E82C size 0x14
-// gap_03_8019E910_text @ 0x8019E910 size 0x10
-// gap_03_8019E958_text @ 0x8019E958 size 0x8
-// gap_03_8019E9C8_text @ 0x8019E9C8 size 0x18
-// gap_03_8019EA5C_text @ 0x8019EA5C size 0x4
-// gap_03_8019EA7C_text @ 0x8019EA7C size 0x4
-// gap_03_8019EAA4_text @ 0x8019EAA4 size 0x1C
-// gap_03_8019EAFC_text @ 0x8019EAFC size 0x4
-// gap_03_8019EB3C_text @ 0x8019EB3C size 0x4
-// gap_03_8019EB94_text @ 0x8019EB94 size 0xC
-// gap_03_8019EBDC_text @ 0x8019EBDC size 0x4
-// gap_03_8019EC18_text @ 0x8019EC18 size 0x8
-// gap_03_8019EC4C_text @ 0x8019EC4C size 0x14
-// gap_03_8019ECB0_text @ 0x8019ECB0 size 0x10
-// gap_03_8019ED04_text @ 0x8019ED04 size 0x1C
-// gap_03_8019ED78_text @ 0x8019ED78 size 0x8
-// gap_03_8019EEA8_text @ 0x8019EEA8 size 0x18
-// gap_03_8019EEE4_text @ 0x8019EEE4 size 0x1C
-// gap_03_8019F170_text @ 0x8019F170 size 0x10
-// gap_03_8019F1E8_text @ 0x8019F1E8 size 0x18
-// gap_03_8019F224_text @ 0x8019F224 size 0x1C
-// gap_03_8019F26C_text @ 0x8019F26C size 0x14
-// gap_03_8019F2A8_text @ 0x8019F2A8 size 0x18
-// gap_03_8019F2F8_text @ 0x8019F2F8 size 0x8
-// gap_03_8019F624_text @ 0x8019F624 size 0x1C
-// gap_03_8019F66C_text @ 0x8019F66C size 0x14
-// gap_03_8019F6E4_text @ 0x8019F6E4 size 0x1C
-// gap_03_8019F770_text @ 0x8019F770 size 0x10
-// gap_03_8019F994_text @ 0x8019F994 size 0xC
-// gap_03_8019FB3C_text @ 0x8019FB3C size 0x4
-// gap_03_8019FB84_text @ 0x8019FB84 size 0x1C
-// gap_03_8019FCAC_text @ 0x8019FCAC size 0x14
-// gap_03_8019FD34_text @ 0x8019FD34 size 0xC
-// gap_03_8019FD58_text @ 0x8019FD58 size 0x8
-// gap_03_8019FD78_text @ 0x8019FD78 size 0x8
-// gap_03_8019FDD0_text @ 0x8019FDD0 size 0x10
-// gap_03_8019FE30_text @ 0x8019FE30 size 0x10
-// gap_03_8019FE7C_text @ 0x8019FE7C size 0x4
-// gap_03_8019FEB0_text @ 0x8019FEB0 size 0x10
-// gap_03_8019FEF0_text @ 0x8019FEF0 size 0x10
-// gap_03_8019FF5C_text @ 0x8019FF5C size 0x4
-// gap_03_8019FFF0_text @ 0x8019FFF0 size 0x10
-// gap_03_801A0068_text @ 0x801A0068 size 0x18
-// gap_03_801A0184_text @ 0x801A0184 size 0x1C
-// gap_03_801A01E8_text @ 0x801A01E8 size 0x18
-// gap_03_801A05D4_text @ 0x801A05D4 size 0xC
-// gap_03_801A07C4_text @ 0x801A07C4 size 0x1C
-// gap_03_801A0834_text @ 0x801A0834 size 0xC
-// gap_03_801A08A4_text @ 0x801A08A4 size 0x1C
-// gap_03_801A0928_text @ 0x801A0928 size 0x18
-// gap_03_801A0970_text @ 0x801A0970 size 0x10
-// gap_03_801A0AAC_text @ 0x801A0AAC size 0x14
-// gap_03_801A0AF8_text @ 0x801A0AF8 size 0x8
-// gap_03_801A0B28_text @ 0x801A0B28 size 0x18
-// gap_03_801A0BE8_text @ 0x801A0BE8 size 0x18
-// gap_03_801A0C34_text @ 0x801A0C34 size 0xC
-// gap_03_801A0D14_text @ 0x801A0D14 size 0xC
-// gap_03_801A0EB8_text @ 0x801A0EB8 size 0x8
-// gap_03_801A0F08_text @ 0x801A0F08 size 0x18
-// gap_03_801A0F54_text @ 0x801A0F54 size 0xC
-// gap_03_801A1068_text @ 0x801A1068 size 0x18
-// gap_03_801A1098_text @ 0x801A1098 size 0x8
-// gap_03_801A1118_text @ 0x801A1118 size 0x8
-// gap_03_801A11B0_text @ 0x801A11B0 size 0x10
-// gap_03_801A120C_text @ 0x801A120C size 0x14
-// gap_03_801A1250_text @ 0x801A1250 size 0x10
-// gap_03_801A1270_text @ 0x801A1270 size 0x10
-// gap_03_801A12BC_text @ 0x801A12BC size 0x4
-// gap_03_801A12E8_text @ 0x801A12E8 size 0x18
-// gap_03_801A1438_text @ 0x801A1438 size 0x8
-// gap_03_801A14BC_text @ 0x801A14BC size 0x4
-// gap_03_801A1574_text @ 0x801A1574 size 0xC
-// gap_03_801A1650_text @ 0x801A1650 size 0x10
-// gap_03_801A1784_text @ 0x801A1784 size 0x1C
-// gap_03_801A17D8_text @ 0x801A17D8 size 0x8
-// gap_03_801A1918_text @ 0x801A1918 size 0x8
-// gap_03_801A197C_text @ 0x801A197C size 0x4
-// gap_03_801A1B34_text @ 0x801A1B34 size 0xC
-// gap_03_801A1B94_text @ 0x801A1B94 size 0xC
-// gap_03_801A1BF4_text @ 0x801A1BF4 size 0xC
-// gap_03_801A1C50_text @ 0x801A1C50 size 0x10
-// gap_03_801A1CC8_text @ 0x801A1CC8 size 0x18
-// gap_03_801A1D30_text @ 0x801A1D30 size 0x10
-// gap_03_801A1DB0_text @ 0x801A1DB0 size 0x10
-// gap_03_801A1E08_text @ 0x801A1E08 size 0x18
-// gap_03_801A1E7C_text @ 0x801A1E7C size 0x4
-// gap_03_801A1F50_text @ 0x801A1F50 size 0x10
-// gap_03_801A1FF0_text @ 0x801A1FF0 size 0x10
-// gap_03_801A2864_text @ 0x801A2864 size 0x1C
-// gap_03_801A2928_text @ 0x801A2928 size 0x18
-// gap_03_801A2B08_text @ 0x801A2B08 size 0x18
-// gap_03_801A2BCC_text @ 0x801A2BCC size 0x14
-// gap_03_801A2C78_text @ 0x801A2C78 size 0x8
-// gap_03_801A3104_text @ 0x801A3104 size 0x1C
-// gap_03_801A328C_text @ 0x801A328C size 0x14
-// gap_03_801A32E8_text @ 0x801A32E8 size 0x18
-// gap_03_801A335C_text @ 0x801A335C size 0x4
-// gap_03_801A33A8_text @ 0x801A33A8 size 0x18
-// gap_03_801A33FC_text @ 0x801A33FC size 0x4
-// gap_03_801A344C_text @ 0x801A344C size 0x14
-// gap_03_801A34AC_text @ 0x801A34AC size 0x14
-// gap_03_801A35B8_text @ 0x801A35B8 size 0x8
-// gap_03_801A3638_text @ 0x801A3638 size 0x8
-// gap_03_801A3670_text @ 0x801A3670 size 0x10
-// gap_03_801A3728_text @ 0x801A3728 size 0x18
-// gap_03_801A37CC_text @ 0x801A37CC size 0x14
-// gap_03_801A37F8_text @ 0x801A37F8 size 0x8
-// gap_03_801A3838_text @ 0x801A3838 size 0x8
-// gap_03_801A3884_text @ 0x801A3884 size 0x1C
-// gap_03_801A3944_text @ 0x801A3944 size 0x1C
-// gap_03_801A3984_text @ 0x801A3984 size 0x1C
-// gap_03_801A39CC_text @ 0x801A39CC size 0x14
-// gap_03_801A3A0C_text @ 0x801A3A0C size 0x14
-// gap_03_801A3A2C_text @ 0x801A3A2C size 0x14
-// gap_03_801A3A8C_text @ 0x801A3A8C size 0x14
-// gap_03_801A3DBC_text @ 0x801A3DBC size 0x4
-// gap_03_801A41D0_text @ 0x801A41D0 size 0x10
-// gap_03_801A42E4_text @ 0x801A42E4 size 0x1C
-// gap_03_801A43CC_text @ 0x801A43CC size 0x14
-// gap_03_801A451C_text @ 0x801A451C size 0x4
-// gap_03_801A460C_text @ 0x801A460C size 0x14
-// gap_03_801A4648_text @ 0x801A4648 size 0x18
-// gap_03_801A46F0_text @ 0x801A46F0 size 0x10
-// gap_03_801A4738_text @ 0x801A4738 size 0x8
-// gap_03_801A4790_text @ 0x801A4790 size 0x10
-// gap_03_801A47DC_text @ 0x801A47DC size 0x4
-// gap_03_801A4908_text @ 0x801A4908 size 0x18
-// gap_03_801A499C_text @ 0x801A499C size 0x4
-// gap_03_801A4A08_text @ 0x801A4A08 size 0x18
-// gap_03_801A4A98_text @ 0x801A4A98 size 0x8
-// gap_03_801A4AF4_text @ 0x801A4AF4 size 0xC
-// gap_03_801A4B84_text @ 0x801A4B84 size 0x1C
-// gap_03_801A4BE4_text @ 0x801A4BE4 size 0x1C
-// gap_03_801A4C2C_text @ 0x801A4C2C size 0x14
-// gap_03_801A4C68_text @ 0x801A4C68 size 0x18
-// gap_03_801A4D08_text @ 0x801A4D08 size 0x18
-// gap_03_801A4D50_text @ 0x801A4D50 size 0x10
-// gap_03_801A4D7C_text @ 0x801A4D7C size 0x4
-// gap_03_801A4DB4_text @ 0x801A4DB4 size 0xC
-// gap_03_801A4DF8_text @ 0x801A4DF8 size 0x8
-// gap_03_801A4E64_text @ 0x801A4E64 size 0x1C
-// gap_03_801A4EC8_text @ 0x801A4EC8 size 0x18
-// gap_03_801A4F48_text @ 0x801A4F48 size 0x18
-// gap_03_801A4F98_text @ 0x801A4F98 size 0x8
-// gap_03_801A4FD4_text @ 0x801A4FD4 size 0xC
-// gap_03_801A500C_text @ 0x801A500C size 0x14
-// gap_03_801A503C_text @ 0x801A503C size 0x4
-// gap_03_801A5084_text @ 0x801A5084 size 0x1C
-// gap_03_801A50D0_text @ 0x801A50D0 size 0x10
-// gap_03_801A50F4_text @ 0x801A50F4 size 0xC
-// gap_03_801A5114_text @ 0x801A5114 size 0xC
-// gap_03_801A514C_text @ 0x801A514C size 0x14
-// gap_03_801A5194_text @ 0x801A5194 size 0xC
-// gap_03_801A51CC_text @ 0x801A51CC size 0x14
-// gap_03_801A5208_text @ 0x801A5208 size 0x18
-// gap_03_801A52B8_text @ 0x801A52B8 size 0x8
-// gap_03_801A52EC_text @ 0x801A52EC size 0x14
-// gap_03_801A532C_text @ 0x801A532C size 0x14
-// gap_03_801A5390_text @ 0x801A5390 size 0x10
-// gap_03_801A53F0_text @ 0x801A53F0 size 0x10
-// gap_03_801A54CC_text @ 0x801A54CC size 0x14
-// gap_03_801A54E8_text @ 0x801A54E8 size 0x18
-// gap_03_801A55AC_text @ 0x801A55AC size 0x14
-// gap_03_801A5654_text @ 0x801A5654 size 0xC
-// gap_03_801A56A4_text @ 0x801A56A4 size 0x1C
-// gap_03_801A5710_text @ 0x801A5710 size 0x10
-// gap_03_801A57E4_text @ 0x801A57E4 size 0x1C
-// gap_03_801A5828_text @ 0x801A5828 size 0x18
-// gap_03_801A5B0C_text @ 0x801A5B0C size 0x14
-// gap_03_801A5C78_text @ 0x801A5C78 size 0x8
-// gap_03_801A5D28_text @ 0x801A5D28 size 0x18
-// gap_03_801A6150_text @ 0x801A6150 size 0x10
-// gap_03_801A6184_text @ 0x801A6184 size 0x1C
-// gap_03_801A61F8_text @ 0x801A61F8 size 0x8
-// gap_03_801A6264_text @ 0x801A6264 size 0x1C
-// gap_03_801A6330_text @ 0x801A6330 size 0x10
-// gap_03_801A63E8_text @ 0x801A63E8 size 0x18
-// gap_03_801A644C_text @ 0x801A644C size 0x14
-// gap_03_801A6478_text @ 0x801A6478 size 0x8
-// gap_03_801A67DC_text @ 0x801A67DC size 0x4
-// gap_03_801A6874_text @ 0x801A6874 size 0xC
-// gap_03_801A68D4_text @ 0x801A68D4 size 0xC
-// gap_03_801A6AD4_text @ 0x801A6AD4 size 0xC
-// gap_03_801A6C18_text @ 0x801A6C18 size 0x8
-// gap_03_801A6C88_text @ 0x801A6C88 size 0x18
-// gap_03_801A6D90_text @ 0x801A6D90 size 0x10
-// gap_03_801A6E88_text @ 0x801A6E88 size 0x18
-// gap_03_801A6F74_text @ 0x801A6F74 size 0xC
-// gap_03_801A7010_text @ 0x801A7010 size 0x10
-// gap_03_801A705C_text @ 0x801A705C size 0x4
-// gap_03_801A709C_text @ 0x801A709C size 0x4
-// gap_03_801A70EC_text @ 0x801A70EC size 0x14
-// gap_03_801A7110_text @ 0x801A7110 size 0x10
-// gap_03_801A716C_text @ 0x801A716C size 0x14
-// gap_03_801A7214_text @ 0x801A7214 size 0xC
-// gap_03_801A72D0_text @ 0x801A72D0 size 0x10
-// gap_03_801A73EC_text @ 0x801A73EC size 0x14
-// gap_03_801A7454_text @ 0x801A7454 size 0xC
-// gap_03_801A749C_text @ 0x801A749C size 0x4
-// gap_03_801A7550_text @ 0x801A7550 size 0x10
-// gap_03_801A75CC_text @ 0x801A75CC size 0x14
-// gap_03_801A7610_text @ 0x801A7610 size 0x10
-// gap_03_801A76B0_text @ 0x801A76B0 size 0x10
-// gap_03_801A7788_text @ 0x801A7788 size 0x18
-// gap_03_801A77A8_text @ 0x801A77A8 size 0x18
-// gap_03_801A77F0_text @ 0x801A77F0 size 0x10
-// gap_03_801A78B0_text @ 0x801A78B0 size 0x10
-// gap_03_801A7A98_text @ 0x801A7A98 size 0x8
-// gap_03_801A7D1C_text @ 0x801A7D1C size 0x4
-// gap_03_801A7F2C_text @ 0x801A7F2C size 0x14
-// gap_03_801A8068_text @ 0x801A8068 size 0x18
-// gap_03_801A80B4_text @ 0x801A80B4 size 0xC
-// gap_03_801A80E8_text @ 0x801A80E8 size 0x18
-// gap_03_801A8154_text @ 0x801A8154 size 0xC
-// gap_03_801A81C8_text @ 0x801A81C8 size 0x18
-// gap_03_801A8318_text @ 0x801A8318 size 0x8
-// gap_03_801A83F0_text @ 0x801A83F0 size 0x10
-// gap_03_801A847C_text @ 0x801A847C size 0x4
-// gap_03_801A84EC_text @ 0x801A84EC size 0x14
-// gap_03_801A860C_text @ 0x801A860C size 0x14
-// gap_03_801A8768_text @ 0x801A8768 size 0x18
-// gap_03_801A87C4_text @ 0x801A87C4 size 0x1C
-// gap_03_801A8824_text @ 0x801A8824 size 0x1C
-// gap_03_801A886C_text @ 0x801A886C size 0x14
-// gap_03_801A8890_text @ 0x801A8890 size 0x10
-// gap_03_801A89EC_text @ 0x801A89EC size 0x14
 // securityCallback @ 0x8019BDA0 size 0x6C
-// setSecurityCallback @ 0x8019BE20 size 0x10
+void setSecurityCallback(s32 arg0, s32 arg1, s32 arg2) {
+    lbl_804A1F50 = arg2;
+    lbl_804A1F4C = arg0;
+    lbl_804A1F48 = arg1;
+}
+
 
 
