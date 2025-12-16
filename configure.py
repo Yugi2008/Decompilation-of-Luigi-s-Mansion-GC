@@ -512,6 +512,8 @@ config.libs = [
 
     GameMain("main.cpp", NonMatching),
     GameProject("auto_03_80194428_text.c", NonMatching),
+    GameProject("auto_03_801356FC_text.c", NonMatching),
+
 #    GameSource("PSystem", [
 #        (NonMatching, "initthread.cpp"),
 #        (NonMatching, "memory.cpp"),

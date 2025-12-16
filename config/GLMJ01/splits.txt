@@ -21,6 +21,9 @@ JSystem/System/JUtility/src/JUTFontData_Sjsfont.s: comment:0
 sources/main.cpp:
 	.text       start:0x80005760 end:0x80005C00
 
+Project/auto_03_801356FC_text.c:
+	.text       start:0x801356FC end:0x80138950
+
 Project/auto_03_80194428_text.c:
 	.text       start:0x80194428 end:0x801B12A4
 
