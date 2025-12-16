@@ -21,11 +21,572 @@ JSystem/System/JUtility/src/JUTFontData_Sjsfont.s: comment:0
 sources/main.cpp:
 	.text       start:0x80005760 end:0x80005C00
 
+Project/auto_03_80005C00_text.c:
+	.text       start:0x80005C00 end:0x8000829C
+
+Project/auto_03_800082F0_text.c:
+	.text       start:0x800082F0 end:0x800093CC
+
+Project/auto_03_80009418_text.c:
+	.text       start:0x80009418 end:0x8000AE80
+
+Project/auto_03_8000AEEC_text.c:
+	.text       start:0x8000AEEC end:0x8000B74C
+
+Project/auto_03_8000B7A4_text.c:
+	.text       start:0x8000B7A4 end:0x8000C628
+
+Project/auto_03_8000C650_text.c:
+	.text       start:0x8000C650 end:0x8001425C
+
+Project/auto_03_80014278_text.c:
+	.text       start:0x80014278 end:0x80022B54
+
+Project/auto_03_80022B6C_text.c:
+	.text       start:0x80022B6C end:0x8002E8B0
+
+Project/auto_03_8002E8C4_text.c:
+	.text       start:0x8002E8C4 end:0x80037B14
+
+Project/auto_03_80037B3C_text.c:
+	.text       start:0x80037B3C end:0x80039F5C
+
+Project/auto_03_80039FF8_text.c:
+	.text       start:0x80039FF8 end:0x8003AAA8
+
+Project/auto_03_8003AAF4_text.c:
+	.text       start:0x8003AAF4 end:0x8003E67C
+
+Project/auto_03_8003E70C_text.c:
+	.text       start:0x8003E70C end:0x8003F1C4
+
+Project/auto_03_8003F200_text.c:
+	.text       start:0x8003F200 end:0x80040128
+
+Project/auto_03_800401B8_text.c:
+	.text       start:0x800401B8 end:0x80041900
+
+Project/auto_03_80041980_text.c:
+	.text       start:0x80041980 end:0x80043BEC
+
+Project/auto_03_80043C64_text.c:
+	.text       start:0x80043C64 end:0x80043E18
+
+Project/auto_03_80043E40_text.c:
+	.text       start:0x80043E40 end:0x80044840
+
+Project/auto_03_800448A0_text.c:
+	.text       start:0x800448A0 end:0x800456B0
+
+Project/auto_03_80045724_text.c:
+	.text       start:0x80045724 end:0x80045F04
+
+Project/auto_03_80045F78_text.c:
+	.text       start:0x80045F78 end:0x80046210
+
+Project/auto_03_80046214_text.c:
+	.text       start:0x80046214 end:0x80046D9C
+
+Project/auto_03_80046DE4_text.c:
+	.text       start:0x80046DE4 end:0x8004C840
+
+Project/auto_03_8004C868_text.c:
+	.text       start:0x8004C868 end:0x8004CF18
+
+Project/auto_03_8004CF54_text.c:
+	.text       start:0x8004CF54 end:0x80050510
+
+Project/auto_03_80050538_text.c:
+	.text       start:0x80050538 end:0x80054E48
+
+Project/auto_03_80054EAC_text.c:
+	.text       start:0x80054EAC end:0x800576B8
+
+Project/auto_03_800576D0_text.c:
+	.text       start:0x800576D0 end:0x800576E0
+
+Project/auto_03_800576E4_text.c:
+	.text       start:0x800576E4 end:0x8005B644
+
+Project/auto_03_8005B650_text.c:
+	.text       start:0x8005B650 end:0x8005C6EC
+
+Project/auto_03_8005C720_text.c:
+	.text       start:0x8005C720 end:0x8005D3FC
+
+Project/auto_03_8005D43C_text.c:
+	.text       start:0x8005D43C end:0x80066100
+
+Project/auto_03_80066134_text.c:
+	.text       start:0x80066134 end:0x800699A0
+
+Project/auto_03_80069A6C_text.c:
+	.text       start:0x80069A6C end:0x8006A920
+
+Project/auto_03_8006AAAC_text.c:
+	.text       start:0x8006AAAC end:0x8006ADE0
+
+Project/auto_03_8006AE4C_text.c:
+	.text       start:0x8006AE4C end:0x8006C970
+
+Project/auto_03_8006CB2C_text.c:
+	.text       start:0x8006CB2C end:0x8006DE1C
+
+Project/auto_03_8006E008_text.c:
+	.text       start:0x8006E008 end:0x8006E6D0
+
+Project/auto_03_8006E73C_text.c:
+	.text       start:0x8006E73C end:0x8006F05C
+
+Project/auto_03_8006F0F8_text.c:
+	.text       start:0x8006F0F8 end:0x8007044C
+
+Project/auto_03_80070668_text.c:
+	.text       start:0x80070668 end:0x80070AFC
+
+Project/auto_03_80070B38_text.c:
+	.text       start:0x80070B38 end:0x80070DC0
+
+Project/auto_03_80070DFC_text.c:
+	.text       start:0x80070DFC end:0x80072754
+
+Project/auto_03_80072790_text.c:
+	.text       start:0x80072790 end:0x800763F8
+
+Project/auto_03_80076420_text.c:
+	.text       start:0x80076420 end:0x800813E4
+
+Project/auto_03_800813F0_text.c:
+	.text       start:0x800813F0 end:0x800839C4
+
+Project/auto_03_800839F8_text.c:
+	.text       start:0x800839F8 end:0x800887F8
+
+Project/auto_03_8008882C_text.c:
+	.text       start:0x8008882C end:0x80097AF4
+
+Project/auto_03_80097B30_text.c:
+	.text       start:0x80097B30 end:0x8009A14C
+
+Project/auto_03_8009A278_text.c:
+	.text       start:0x8009A278 end:0x8009BEAC
+
+Project/auto_03_8009BFD8_text.c:
+	.text       start:0x8009BFD8 end:0x8009ED2C
+
+Project/auto_03_8009F188_text.c:
+	.text       start:0x8009F188 end:0x800A0838
+
+Project/auto_03_800A0A54_text.c:
+	.text       start:0x800A0A54 end:0x800A0CE0
+
+Project/auto_03_800A0D4C_text.c:
+	.text       start:0x800A0D4C end:0x800A2530
+
+Project/auto_03_800A26EC_text.c:
+	.text       start:0x800A26EC end:0x800A5680
+
+Project/auto_03_800A5BE4_text.c:
+	.text       start:0x800A5BE4 end:0x800A731C
+
+Project/auto_03_800A7508_text.c:
+	.text       start:0x800A7508 end:0x800A8498
+
+Project/auto_03_800A85F4_text.c:
+	.text       start:0x800A85F4 end:0x800A8A34
+
+Project/auto_03_800A8AA0_text.c:
+	.text       start:0x800A8AA0 end:0x800B840C
+
+Project/auto_03_800B8424_text.c:
+	.text       start:0x800B8424 end:0x800C1C2C
+
+Project/auto_03_800C1CF8_text.c:
+	.text       start:0x800C1CF8 end:0x800C360C
+
+Project/auto_03_800C373C_text.c:
+	.text       start:0x800C373C end:0x800C40F8
+
+Project/auto_03_800C4194_text.c:
+	.text       start:0x800C4194 end:0x800C4EE4
+
+Project/auto_03_800C5070_text.c:
+	.text       start:0x800C5070 end:0x800C7FA4
+
+Project/auto_03_800C81F0_text.c:
+	.text       start:0x800C81F0 end:0x800C9344
+
+Project/auto_03_800C93E0_text.c:
+	.text       start:0x800C93E0 end:0x800C9EFC
+
+Project/auto_03_800CA030_text.c:
+	.text       start:0x800CA030 end:0x800CB144
+
+Project/auto_03_800CB4B0_text.c:
+	.text       start:0x800CB4B0 end:0x800CBFF8
+
+Project/auto_03_800CC0F4_text.c:
+	.text       start:0x800CC0F4 end:0x800CCE6C
+
+Project/auto_03_800CD074_text.c:
+	.text       start:0x800CD074 end:0x800CDDA8
+
+Project/auto_03_800CDF34_text.c:
+	.text       start:0x800CDF34 end:0x800D14D4
+
+Project/auto_03_800D1700_text.c:
+	.text       start:0x800D1700 end:0x800D1ED8
+
+Project/auto_03_800D1FA4_text.c:
+	.text       start:0x800D1FA4 end:0x800D2A98
+
+Project/auto_03_800D2BC4_text.c:
+	.text       start:0x800D2BC4 end:0x800D3400
+
+Project/auto_03_800D355C_text.c:
+	.text       start:0x800D355C end:0x800D3770
+
+Project/auto_03_800D380C_text.c:
+	.text       start:0x800D380C end:0x800D40D0
+
+Project/auto_03_800D410C_text.c:
+	.text       start:0x800D410C end:0x800D4A80
+
+Project/auto_03_800D4C9C_text.c:
+	.text       start:0x800D4C9C end:0x800D5A38
+
+Project/auto_03_800D62C0_text.c:
+	.text       start:0x800D62C0 end:0x800D709C
+
+Project/auto_03_800D7168_text.c:
+	.text       start:0x800D7168 end:0x800D743C
+
+Project/auto_03_800D7478_text.c:
+	.text       start:0x800D7478 end:0x800D7F04
+
+Project/auto_03_800D8030_text.c:
+	.text       start:0x800D8030 end:0x800DA0D0
+
+Project/auto_03_800DA19C_text.c:
+	.text       start:0x800DA19C end:0x800DA7DC
+
+Project/auto_03_800DA8A8_text.c:
+	.text       start:0x800DA8A8 end:0x800DB0DC
+
+Project/auto_03_800DB360_text.c:
+	.text       start:0x800DB360 end:0x800DC418
+
+Project/auto_03_800DC4B4_text.c:
+	.text       start:0x800DC4B4 end:0x800DD188
+
+Project/auto_03_800DD284_text.c:
+	.text       start:0x800DD284 end:0x800DD704
+
+Project/auto_03_800DD7A0_text.c:
+	.text       start:0x800DD7A0 end:0x800DEDE4
+
+Project/auto_03_800DF29C_text.c:
+	.text       start:0x800DF29C end:0x800E1C58
+
+Project/auto_03_800E2760_text.c:
+	.text       start:0x800E2760 end:0x800E4920
+
+Project/auto_03_800E495C_text.c:
+	.text       start:0x800E495C end:0x800E68AC
+
+Project/auto_03_800E69D8_text.c:
+	.text       start:0x800E69D8 end:0x800F481C
+
+Project/auto_03_800F4888_text.c:
+	.text       start:0x800F4888 end:0x800F4EBC
+
+Project/auto_03_800F4F88_text.c:
+	.text       start:0x800F4F88 end:0x800F5780
+
+Project/auto_03_800F57EC_text.c:
+	.text       start:0x800F57EC end:0x800F5FEC
+
+Project/auto_03_800F60E8_text.c:
+	.text       start:0x800F60E8 end:0x800F6688
+
+Project/auto_03_800F6754_text.c:
+	.text       start:0x800F6754 end:0x800F79E4
+
+Project/auto_03_800F7B30_text.c:
+	.text       start:0x800F7B30 end:0x800F8B54
+
+Project/auto_03_800F8C50_text.c:
+	.text       start:0x800F8C50 end:0x800F8E2C
+
+Project/auto_03_800F8E68_text.c:
+	.text       start:0x800F8E68 end:0x800F91F0
+
+Project/auto_03_800F925C_text.c:
+	.text       start:0x800F925C end:0x800FA3EC
+
+Project/auto_03_800FA4B8_text.c:
+	.text       start:0x800FA4B8 end:0x800FB334
+
+Project/auto_03_800FB3D0_text.c:
+	.text       start:0x800FB3D0 end:0x800FC144
+
+Project/auto_03_800FC300_text.c:
+	.text       start:0x800FC300 end:0x800FD0A8
+
+Project/auto_03_800FD204_text.c:
+	.text       start:0x800FD204 end:0x800FDC94
+
+Project/auto_03_800FDDC0_text.c:
+	.text       start:0x800FDDC0 end:0x800FE5B4
+
+Project/auto_03_800FE6E0_text.c:
+	.text       start:0x800FE6E0 end:0x800FF4EC
+
+Project/auto_03_800FF648_text.c:
+	.text       start:0x800FF648 end:0x801013FC
+
+Project/auto_03_80101648_text.c:
+	.text       start:0x80101648 end:0x801042B4
+
+Project/auto_03_801048E0_text.c:
+	.text       start:0x801048E0 end:0x8010513C
+
+Project/auto_03_801051D8_text.c:
+	.text       start:0x801051D8 end:0x801076A0
+
+Project/auto_03_80107F08_text.c:
+	.text       start:0x80107F08 end:0x80108608
+
+Project/auto_03_80108644_text.c:
+	.text       start:0x80108644 end:0x80108C10
+
+Project/auto_03_80108C7C_text.c:
+	.text       start:0x80108C7C end:0x801090C0
+
+Project/auto_03_8010915C_text.c:
+	.text       start:0x8010915C end:0x8010A698
+
+Project/auto_03_8010AA88_text.c:
+	.text       start:0x8010AA88 end:0x8010AF20
+
+Project/auto_03_8010AF5C_text.c:
+	.text       start:0x8010AF5C end:0x8010D4AC
+
+Project/auto_03_8010D788_text.c:
+	.text       start:0x8010D788 end:0x8010E368
+
+Project/auto_03_8010E52C_text.c:
+	.text       start:0x8010E52C end:0x8010F268
+
+Project/auto_03_8010F480_text.c:
+	.text       start:0x8010F480 end:0x8010FB94
+
+Project/auto_03_8010FC30_text.c:
+	.text       start:0x8010FC30 end:0x80110268
+
+Project/auto_03_80110364_text.c:
+	.text       start:0x80110364 end:0x80110B10
+
+Project/auto_03_80110C0C_text.c:
+	.text       start:0x80110C0C end:0x80111B78
+
+Project/auto_03_80111CD4_text.c:
+	.text       start:0x80111CD4 end:0x80112E9C
+
+Project/auto_03_80112FC8_text.c:
+	.text       start:0x80112FC8 end:0x80123F90
+
+Project/auto_03_80123FFC_text.c:
+	.text       start:0x80123FFC end:0x801243FC
+
+Project/auto_03_80124438_text.c:
+	.text       start:0x80124438 end:0x80125D68
+
+Project/auto_03_80125E94_text.c:
+	.text       start:0x80125E94 end:0x8012C1A0
+
+Project/auto_03_8012C1C4_text.c:
+	.text       start:0x8012C1C4 end:0x8012C960
+
+Project/auto_03_8012C99C_text.c:
+	.text       start:0x8012C99C end:0x8012F034
+
+Project/auto_03_8012F0E4_text.c:
+	.text       start:0x8012F0E4 end:0x8013390C
+
+Project/auto_03_80133AF8_text.c:
+	.text       start:0x80133AF8 end:0x801348EC
+
+Project/auto_03_80134954_text.c:
+	.text       start:0x80134954 end:0x80135630
+
 Project/auto_03_801356FC_text.c:
 	.text       start:0x801356FC end:0x80138950
 
+Project/auto_03_80138C2C_text.c:
+	.text       start:0x80138C2C end:0x8013BAAC
+
+Project/auto_03_8013BD58_text.c:
+	.text       start:0x8013BD58 end:0x80141220
+
+Project/auto_03_801414FC_text.c:
+	.text       start:0x801414FC end:0x80143E30
+
+Project/auto_03_80143E54_text.c:
+	.text       start:0x80143E54 end:0x80145850
+
+Project/auto_03_80145A6C_text.c:
+	.text       start:0x80145A6C end:0x80146A30
+
+Project/auto_03_80146A84_text.c:
+	.text       start:0x80146A84 end:0x80147FE0
+
+Project/auto_03_801481CC_text.c:
+	.text       start:0x801481CC end:0x80149BF4
+
+Project/auto_03_80149E70_text.c:
+	.text       start:0x80149E70 end:0x8014AA74
+
+Project/auto_03_8014AB70_text.c:
+	.text       start:0x8014AB70 end:0x8014B490
+
+Project/auto_03_8014B58C_text.c:
+	.text       start:0x8014B58C end:0x8014C464
+
+Project/auto_03_8014C5C0_text.c:
+	.text       start:0x8014C5C0 end:0x8014D988
+
+Project/auto_03_8014DB14_text.c:
+	.text       start:0x8014DB14 end:0x8014E318
+
+Project/auto_03_8014E3E4_text.c:
+	.text       start:0x8014E3E4 end:0x801501E4
+
+Project/auto_03_801502B0_text.c:
+	.text       start:0x801502B0 end:0x80150AF8
+
+Project/auto_03_80150B1C_text.c:
+	.text       start:0x80150B1C end:0x80151314
+
+Project/auto_03_80151410_text.c:
+	.text       start:0x80151410 end:0x801519CC
+
+Project/auto_03_80151A68_text.c:
+	.text       start:0x80151A68 end:0x801539F4
+
+Project/auto_03_80153B50_text.c:
+	.text       start:0x80153B50 end:0x80154CFC
+
+Project/auto_03_80154E28_text.c:
+	.text       start:0x80154E28 end:0x80156E10
+
+Project/auto_03_80156EA4_text.c:
+	.text       start:0x80156EA4 end:0x80157664
+
+Project/auto_03_801576D0_text.c:
+	.text       start:0x801576D0 end:0x80157F1C
+
+Project/auto_03_80157F88_text.c:
+	.text       start:0x80157F88 end:0x80158ACC
+
+Project/auto_03_80158B68_text.c:
+	.text       start:0x80158B68 end:0x80159190
+
+Project/auto_03_801591FC_text.c:
+	.text       start:0x801591FC end:0x80159AD8
+
+Project/auto_03_80159B44_text.c:
+	.text       start:0x80159B44 end:0x8015A0D8
+
+Project/auto_03_8015A174_text.c:
+	.text       start:0x8015A174 end:0x8015A510
+
+Project/auto_03_8015A54C_text.c:
+	.text       start:0x8015A54C end:0x8015A5EC
+
+Project/auto_03_8015A624_text.c:
+	.text       start:0x8015A624 end:0x8015B2F4
+
+Project/auto_03_8015B3F0_text.c:
+	.text       start:0x8015B3F0 end:0x8015DD30
+
+Project/auto_03_8015DD7C_text.c:
+	.text       start:0x8015DD7C end:0x8015EC74
+
+Project/auto_03_8015EDF0_text.c:
+	.text       start:0x8015EDF0 end:0x80160F9C
+
+Project/auto_03_801612E8_text.c:
+	.text       start:0x801612E8 end:0x80167E80
+
+Project/auto_03_80168004_text.c:
+	.text       start:0x80168004 end:0x8016CF20
+
+Project/auto_03_8016CF7C_text.c:
+	.text       start:0x8016CF7C end:0x8016D604
+
+Project/auto_03_8016D69C_text.c:
+	.text       start:0x8016D69C end:0x8016EBD4
+
+Project/auto_03_8016F170_text.c:
+	.text       start:0x8016F170 end:0x8016FF8C
+
+Project/auto_03_80170328_text.c:
+	.text       start:0x80170328 end:0x80177D20
+
+Project/auto_03_80177D5C_text.c:
+	.text       start:0x80177D5C end:0x801789EC
+
+Project/auto_03_80178B10_text.c:
+	.text       start:0x80178B10 end:0x8017B5C4
+
+Project/auto_03_8017B720_text.c:
+	.text       start:0x8017B720 end:0x8017C8E4
+
+Project/auto_03_8017C9B0_text.c:
+	.text       start:0x8017C9B0 end:0x8017D348
+
+Project/auto_03_8017D414_text.c:
+	.text       start:0x8017D414 end:0x8017DEB8
+
+Project/auto_03_8017DF84_text.c:
+	.text       start:0x8017DF84 end:0x8017F244
+
+Project/auto_03_8017F370_text.c:
+	.text       start:0x8017F370 end:0x80180E30
+
+Project/auto_03_8018107C_text.c:
+	.text       start:0x8018107C end:0x80182140
+
+Project/auto_03_8018230C_text.c:
+	.text       start:0x8018230C end:0x80183130
+
+Project/auto_03_8018331C_text.c:
+	.text       start:0x8018331C end:0x80183AC0
+
+Project/auto_03_80183B2C_text.c:
+	.text       start:0x80183B2C end:0x80184ACC
+
+Project/auto_03_80184BC4_text.c:
+	.text       start:0x80184BC4 end:0x801866E4
+
+Project/auto_03_80186724_text.c:
+	.text       start:0x80186724 end:0x8018DF14
+
+Project/auto_03_8018DF40_text.c:
+	.text       start:0x8018DF40 end:0x8019440C
+
 Project/auto_03_80194428_text.c:
 	.text       start:0x80194428 end:0x801B12A4
+
+Project/auto_03_801B12CC_text.c:
+	.text       start:0x801B12CC end:0x801B3558
+
+Project/auto_03_801B35C4_text.c:
+	.text       start:0x801B35C4 end:0x801BB1B0
+
+Project/auto_03_801BB264_text.c:
+	.text       start:0x801BB264 end:0x801C8BC0
 
 JSystem/System/JKernel/src/JKRHeap.cpp:
 	.text       start:0x801C8BC0 end:0x801C95E0
@@ -54,8 +615,29 @@ JSystem/System/JKernel/src/JKRThread.cpp:
 	.bss        start:0x804946D0 end:0x804946E8
 	.sdata      start:0x804A0868 end:0x804A0870
 
+Project/auto_03_801CB834_text.c:
+	.text       start:0x801CB834 end:0x801CC1F0
+
+Project/auto_03_801CC244_text.c:
+	.text       start:0x801CC29C end:0x801CC5AC
+
+Project/auto_03_801CC600_text.c:
+	.text       start:0x801CC658 end:0x801CCE38
+
+Project/auto_03_801CCE8C_text.c:
+	.text       start:0x801CCE8C end:0x801CD6A4
+
+Project/auto_03_801CD6F8_text.c:
+	.text       start:0x801CD750 end:0x801CF46C
+
 JSystem/System/JSupport/src/JSUList.cpp:
 	.text       start:0x801CF46C end:0x801CF9A0
+
+Project/auto_03_801CF9A0_text.c:
+	.text       start:0x801CF9A0 end:0x801D2DE0
+
+Project/auto_03_801D2E8C_text.c:
+	.text       start:0x801D2E8C end:0x801D4208
 
 JSystem/System/JUtility/src/JUTDirectPrint.cpp:
 	.text       start:0x801D4208 end:0x801D4B80
@@ -364,6 +946,36 @@ DolphinSDK/src/dolphin/gx/GXDisplayList.c:
 DolphinSDK/src/dolphin/gx/GXTransform.c:
 	.text       start:0x801F4AA4 end:0x801F508C
 	.sdata2     start:0x804A6340 end:0x804A634C
+
+Project/auto_03_801F508C_text.c:
+	.text       start:0x801F508C end:0x801F5180
+
+Project/auto_03_801F51C8_text.c:
+	.text       start:0x801F51C8 end:0x801F51E0
+
+Project/auto_03_801F524C_text.c:
+	.text       start:0x801F524C end:0x801F5258
+
+Project/auto_03_801F560C_text.c:
+	.text       start:0x801F560C end:0x801F5838
+
+Project/auto_03_801F58D0_text.c:
+	.text       start:0x801F58D0 end:0x801F58F8
+
+Project/auto_03_801F5C54_text.c:
+	.text       start:0x801F5C54 end:0x801F5D94
+
+Project/auto_03_801F69E8_text.c:
+	.text       start:0x801F69E8 end:0x801F6BD8
+
+Project/auto_03_801F6FC8_text.c:
+	.text       start:0x801F6FC8 end:0x801F76F4
+
+Project/auto_03_801F7768_text.c:
+	.text       start:0x801F7768 end:0x801FB650
+
+Project/auto_03_801FB680_text.c:
+	.text       start:0x801FB680 end:0x8020008C
 
 DolphinSDK/src/dolphin/amcstubs/AmcExi2Stubs.c:
 	.text       start:0x8020008C end:0x802000BC
