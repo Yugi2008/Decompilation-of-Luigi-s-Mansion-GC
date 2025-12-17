@@ -18,7 +18,7 @@ sources/Sequence/src/boot.cpp: comment:0
 JSystem/System/JUtility/src/JUTFontData_Sjsfont.s: comment:0
 	.data       start:0x802FB760 end:0x80328EE0
 
-sources/main.cpp:
+sources/main.c:
 	.text       start:0x80005760 end:0x80005C00
 
 Project/auto_03_80005C00_text.c:
