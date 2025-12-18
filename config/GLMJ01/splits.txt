@@ -30,6 +30,10 @@ Project/auto_03_800082F0_text.c:
 Project/auto_03_80009418_text.c:
 	.text       start:0x80009418 end:0x8000AE80
 
+Project/auto_fn_8000AE80_text.s: comment:0
+	.text       start:0x8000AE80 end:0x8000AEEC
+	.ctors      start:0x80200C8C end:0x80200C90
+
 Project/auto_03_8000AEEC_text.c:
 	.text       start:0x8000AEEC end:0x8000B74C
 
