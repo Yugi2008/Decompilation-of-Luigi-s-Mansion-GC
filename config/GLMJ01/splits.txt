@@ -73,6 +73,10 @@ Project/auto_03_800401B8_text.c:
 Project/auto_03_80041980_text.c:
 	.text       start:0x80041980 end:0x80043BEC
 
+Project/auto_fn_80043BEC_text.s: comment:0
+	.text       start:0x80043BEC end:0x80043C64
+	.ctors      start:0x80200CC0 end:0x80200CC4
+
 Project/auto_03_80043C64_text.c:
 	.text       start:0x80043C64 end:0x80043E18
 
