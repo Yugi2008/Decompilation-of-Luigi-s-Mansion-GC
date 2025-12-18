@@ -30,6 +30,10 @@ typedef u16 unk16_t;
 typedef u32 unk32_t;
 typedef u64 unk64_t;
 
+typedef struct Vec3f {
+    f32 x, y, z;
+} Vec3f;
+
 /* =========================
  * Small portability helpers
  * ========================= */
