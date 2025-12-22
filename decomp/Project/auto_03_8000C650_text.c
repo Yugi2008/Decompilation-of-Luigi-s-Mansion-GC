@@ -236,9 +236,10 @@ void fn_8000CF30(s32 unused, s32 arg1){
     s32* temp_r31;
 
     (void)unused;
-    temp_r31 = fn_80006A3C(arg1);
+    temp_r31 = (s32*)fn_80006A3C(arg1);
     *temp_r31 = fn_80006A44(arg1);
 }
+
 // fn_8000CF78 (size: 0x118)
 s32 fn_8000D090(void) {
     return lbl_804A0C80;

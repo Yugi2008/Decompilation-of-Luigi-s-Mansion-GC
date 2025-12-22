@@ -7,7 +7,8 @@ typedef struct JKRHeap JKRHeap;
 typedef struct JKRMemArchive JKRMemArchive;
 typedef s32 JKRMemBreakFlag;
 typedef struct StaticData StaticData;
-
+typedef struct Unk_8001F020_Obj Unk_8001F020_Obj;
+typedef void (*Unk_8001F020_Method)(Unk_8001F020_Obj* self);
 
 typedef struct UnkArg_8000E338 {
     u8    pad0[0x64];
@@ -168,7 +169,7 @@ extern void fn_80113838(void);
 extern void fn_80186E48(s32 arg0);
 extern void fn_8000F418(void);
 extern u8 fn_80006A5C();
-extern s32* fn_80006A3C(s32);
+Unk_8001F020_Obj* fn_80006A3C(s32 arg0);
 extern s32  fn_80006A44(s32);
 extern void fn_8000604C(void* arg0);
 extern void fn_80056E08(void);

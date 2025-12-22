@@ -10,7 +10,8 @@ typedef struct JKRMemArchive JKRMemArchive;
 typedef u32 JKRMemBreakFlag;
 typedef struct OSMessageQueue OSMessageQueue;
 typedef struct JUTDirectPrint JUTDirectPrint;
-
+typedef struct Unk_8001F020_Obj Unk_8001F020_Obj;
+typedef void (*Unk_8001F020_Method)(Unk_8001F020_Obj* self);
 
 typedef struct {
     u8  pad0[0x04];
@@ -179,7 +180,7 @@ u8 fn_80006110(void);
 void fn_80006118(void);
 void fn_8000613C(void);
 u8* fn_8000615C(void);
-s32 fn_80006A3C(void* arg0);
+Unk_8001F020_Obj* fn_80006A3C(s32 arg0);
 s32 fn_80006A44(void* arg0);
 s32 fn_80006A4C(void* arg0);
 s32 fn_80006A54(void* arg0);

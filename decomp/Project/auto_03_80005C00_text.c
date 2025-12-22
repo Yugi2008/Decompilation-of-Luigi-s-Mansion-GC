@@ -57,10 +57,9 @@ u8* fn_8000615C(void) {
 // fn_80006808 (size: 0x58)
 // fn_80006860 (size: 0xAC)
 // fn_8000690C (size: 0x130)
-s32 fn_80006A3C(void* arg0){
-    return *(s32*)((u8*)arg0 + 0x70);
+Unk_8001F020_Obj* fn_80006A3C(s32 arg0){
+    return *(Unk_8001F020_Obj**)((u8*)arg0 + 0x70);
 }
-
 
 s32 fn_80006A44(void* arg0){
     return *(s32*)((u8*)arg0 + 0x64);
