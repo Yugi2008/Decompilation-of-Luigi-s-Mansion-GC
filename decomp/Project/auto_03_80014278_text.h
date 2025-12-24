@@ -3,6 +3,7 @@
 
 #include "lib/types.h"
 
+#define LBL_80399BE0_HANDLE (lbl_80399BE0[0])
 
 typedef struct GXTexObj GXTexObj;
 typedef void (*FnPtrVoid)(void);
@@ -460,11 +461,6 @@ typedef struct Unk_80020030_Arg0 {
     f32 unkA8;     /* +0xA8 */
 } Unk_80020030_Arg0;
 
-typedef struct Unk_80399BE0 {
-    void* unk0;  /* +0x00 */
-    void* unk4;  /* +0x04 */
-    void* unk8;  /* +0x08 */
-} Unk_80399BE0;
 
 typedef struct UnkPairF32 {
     f32 unk0; /* +0x00 */
@@ -548,8 +544,7 @@ extern void __dl__FPv(void* p);
 extern void fn_80021724(void*);
 
 
-
-extern Unk_80399BE0 lbl_80399BE0;
+extern s32 lbl_80399BE0[];
 extern s32 lbl_80399B60[];
 extern u8 lbl_804A0DA8;
 extern s8  lbl_804A0D8A;
@@ -630,6 +625,10 @@ extern s32 lbl_804A0CF8;
 
 
 
+
+
+
+void fn_8002CD58(void);
 void fn_80014278(Unk_80014278* arg0);
 void fn_8001431C(Unk_8001431C* arg0);
 void fn_80014334(void);

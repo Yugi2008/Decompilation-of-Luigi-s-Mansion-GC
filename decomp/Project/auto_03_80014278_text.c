@@ -1201,9 +1201,9 @@ void fn_800202A8(s32 arg0){
 // fn_800202B0 (size: 0x13C)
 // fn_800203EC (size: 0x14C)
 void fn_80020538(void){
-    __dl__FPv(lbl_80399BE0.unk0);
-    __dl__FPv(lbl_80399BE0.unk4);
-    __dl__FPv(lbl_80399BE0.unk8);
+    __dl__FPv((void*)lbl_80399BE0[0]);
+    __dl__FPv((void*)lbl_80399BE0[1]);
+    __dl__FPv((void*)lbl_80399BE0[2]);
 }
 
 
